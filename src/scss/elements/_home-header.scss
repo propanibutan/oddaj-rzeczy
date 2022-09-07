@@ -2,27 +2,101 @@
 
 .header {
     height: 60.2rem;
-    width: 85.5rem;
+    width: 100%;
+    justify-content: space-between;
 
     .header-image {
         background: transparent url('/assets/Home-Hero-Image.jpg') no-repeat -30.2rem 0;
         margin-left: -4.25rem;
     }
 
-    .login-bar {
+    .header-column {
         display: flex;
-        justify-content: flex-end;
+        flex-direction: column;
 
-        .login-button {
-            width: 5.625rem;
-            height: 2.25rem;
-            text-align: center;
-            font-size: 0.8125rem;
-            line-height: 2rem;
-            color: $color-light-gray;
-            text-decoration: none;
-            &:hover {
-              border: 0.75px solid $color-yellow;  
+        .login-bar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.25rem;
+            margin-right: 1.30rem;
+
+            .login-button {
+                width: 5.625rem;
+                height: 2.25rem;
+                text-align: center;
+                font-size: 0.89rem;
+                line-height: 2rem;
+                color: $color-light-gray;
+                text-decoration: none;
+                &:hover {
+                border: 0.75px solid $color-yellow;  
+                }
+            }
+        }
+
+        .navigation-bar {
+            display: flex;
+            list-style: none;
+            justify-content: flex-end;
+
+            .navigation-button {
+                display: flex;
+                height: 2.625rem;
+                align-items: center;
+                line-height: 1.5rem;
+                margin: 0.25rem;
+                &:hover {
+                border: 0.75px solid $color-dark-gray;  
+                }
+
+                .navigation-text {
+                    color: $color-dark-gray;
+                    text-decoration: none;
+                    font-size: 1.125rem;
+                    margin: 9px 20px;
+                    text-align: center;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        .header-box {
+            color: $color-dark-gray;
+            display: flex;
+            flex-direction: column;
+            padding-top: 225px;
+
+            .header-text {
+                font-size: 2rem;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                margin: 1.5rem 0;
+                white-space: nowrap;
+            }
+
+            .header-box_image {
+                height: 2rem;
+            }
+
+            .header-box_buttons {
+                display: flex;
+                gap: 2rem;
+                margin-top: 5rem;
+
+                .header-box__button {
+                    width: 19rem;
+                    height: 7.5rem;
+                    text-align: center;
+                    font-size: 2rem;
+                    line-height: 2.8rem;
+                    text-decoration: none;
+                    color: $color-dark-gray;
+                    font-weight: lighter;
+                    border: 0.75px solid $color-dark-gray;
+                    padding: 1rem 0;
+                    word-spacing: 100vw;
+                }
             }
         }
     }

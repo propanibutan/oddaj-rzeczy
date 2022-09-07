@@ -3,5 +3,14 @@
 
 body {
     font-family: $font-base;
-    padding: 1.5rem 4.25rem;
+    padding: 1.5rem 0;
+
+    @media (max-width: 480px) {
+        width: 33.333%;
+    }
+
+    @media (max-width: 800px) {
+        width: 50%;
+    }
 }
+

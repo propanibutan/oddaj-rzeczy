@@ -35,29 +35,32 @@ export default function HomeHeader(){
     ]
 
     return (
-        <div className='grid-container header'>
+        <div className='grid-container'>
             <div className='row header'>
                 <div className='col-7 header-image'/>
-                <div className='col-5'>
+                <div className='col-5 header-column'>
                     <section className='login-bar'>
                         <Link to={'/logowanie'} className='login-button'>Zaloguj</Link>
                         <Link to={'/rejestracja'} className='login-button'>Załóż konto</Link>
                     </section>
-                    <nav className='navigation-bar'>
-                        <ul>
+                    <nav>
+                        <ul className='navigation-bar'>
                         {navigation.map(({ name, link, content }) => (
-                            <li key={name}>
-                                <HashLink to={link} smooth>{content}</HashLink> 
+                            <li key={name} className='navigation-button'>
+                                <HashLink to={link} smooth className='navigation-text'>{content}</HashLink> 
                             </li>
                         ))}
                         </ul>              
                     </nav>
-                    <header>
-                        <span>Zacznij pomagać! Oddaj niechciane rzeczy w zaufane ręce</span>
-                        <img src={decoration} alt='dekoracyjna linia'/>
-                        <div>
-                            <button><Link to={'/logowanie'}>ODDAJ RZECZY</Link></button>
-                            <button><Link to={'/logowanie'}>ZORGANIZUJ ZBIÓRKĘ</Link></button>  
+                    <header className='header-box'>
+                        <div className='header-text'>
+                            <span>Zacznij pomagać!</span>
+                            <span>Oddaj niechciane rzeczy w zaufane ręce</span>
+                        </div>
+                        <img src={decoration} className="header-box_image" alt='dekoracyjna linia'/>
+                        <div  className='header-box_buttons'>
+                            <Link to={'/logowanie'} className='header-box__button' >ODDAJ RZECZY</Link>
+                            <Link to={'/logowanie'} className='header-box__button'>ZORGANIZUJ ZBIÓRKĘ</Link> 
                         </div>
                     </header>
                 </div>
