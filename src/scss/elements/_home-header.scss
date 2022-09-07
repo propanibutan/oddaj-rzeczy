@@ -1,0 +1,10 @@
+@import '../settings/colors';
+
+.header {
+    min-height: 963px;
+    min-width: 1368px;
+}
+.header-image {
+    background: transparent url('/assets/Home-Hero-Image.jpg') no-repeat -483px 0;
+    margin-left: -4.25rem;
+}
