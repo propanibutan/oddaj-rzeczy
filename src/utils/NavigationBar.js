@@ -37,7 +37,7 @@ export default function NavigationBar() {
         <ul className='navigation-bar'>
         {navigation.map(({ name, link, content }) => (
             <li key={name} className='navigation-button'>
-                <Scroll to={link} spy={true} smooth={true} offset={-100} duration={1000} className='navigation-text'>{content}</Scroll> 
+                <Scroll to={link} spy={true} smooth={true} offset={0} duration={1000} className='navigation-text'>{content}</Scroll> 
             </li>
         ))}
         </ul>              

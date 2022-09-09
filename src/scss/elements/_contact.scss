@@ -1,0 +1,43 @@
+@import "../settings/colors";
+
+.contact {
+    height: 1026px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        background: url('/assets/Background-Contact-Form.jpg') no-repeat;
+        background-size: cover;
+        opacity: 0.25;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0 -8.85rem;
+    }
+
+    .contact-column-wraper {
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+
+        .contact-form_title {
+            color: $color-dark-gray;
+            font-size: 2.375rem;
+            letter-spacing: -0.0475rem;
+            line-height: 3.4375rem;
+            margin-bottom: 1.5625rem;
+        }
+        .contact-form {
+            margin-top: 4.375rem;
+            width: 528px;
+            height: 327px;
+        }
+    }
+}

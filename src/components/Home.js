@@ -4,7 +4,7 @@ import HomeThreeColumns from './HomeThreeColumns';
 import HomeSimpleSteps from './HomeSimpleSteps';
 import HomeAboutUs from './HomeAboutUs';
 import HomeWhoWeHelp from './HomeWhoWeHelp';
-import HomeContact from './HomeContact';
+import Contact from './Contact';
 
 export default function Home(){
     return (
@@ -14,7 +14,7 @@ export default function Home(){
             <HomeSimpleSteps />
             <HomeAboutUs />
             <HomeWhoWeHelp />
-            <HomeContact />
+            <Contact />
         </>
     );
 }
