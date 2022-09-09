@@ -1,8 +1,9 @@
 @import "../settings/colors";
 
 .simple-steps {
-    padding-top: 3.4375rem;
+    padding-top: 3.4375rem 8.85rem;
     margin: 0 -8.85rem;
+    
 
     .simple-steps_title {
         display: flex;
@@ -29,30 +30,30 @@
         .simple-steps_one_column {
             display: flex;
             flex-direction: column;
-            height: 172px;
-            max-width: 148px;
+            height: 10.75rem;
+            max-width: 9.25rem;
             text-align: center;
             align-items: center;
 
             .simple-steps_one_column_icon{
-                width: 83px;
-                height: 83px;
-                margin-bottom: 8px;
+                width: 5.1875rem;
+                height: 5.1875rem;
+                margin-bottom: 0.5rem;
             }
 
             .simple-steps_one_column_title {
                 color: $color-dark-gray;
-                font-size: 18px;
-                line-height: 24px;
+                font-size: 1.125rem;
+                line-height: 1.5rem;
             }
 
             .simple-steps_one_column_line {
-                width: 70px;
+                width: 4.375rem;
             }
 
             .simple-steps_one_column_description {
                 color: $color-dark-gray;
-                height: 40px;
+                height: 2.5rem;
                 margin: 0;
             }
         }
@@ -61,8 +62,8 @@
     .simple-steps_button{
         display: flex;
         justify-content: center;
-        margin-top: 35px;
-        margin-bottom: 80px;
+        margin-top: 2.1875rem;
+        margin-bottom: 5rem;
     }
 }
 
