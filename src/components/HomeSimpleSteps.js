@@ -1,5 +1,9 @@
 import React from 'react';
  
 export default function HomeSimpleSteps(){
-    return 
+    return (
+        <div id="whats_going_on">
+
+        </div>
+    );
 }

@@ -7,7 +7,7 @@ import decoration from '../assets/Decoration.svg';
 export default function HomeHeader(){
 
     return (
-        <div className='grid-container'>
+        <div id='home' className='grid-container'>
             <div className='row header'>
                 <div className='col-6 header-image'/>
                 <div className='col-6 header-column'>

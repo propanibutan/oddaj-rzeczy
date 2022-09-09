@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { Link as Scroll } from 'react-scroll';
 
 //NOTES: TU TRZEBA JEDNAK UŻYC SCROLLA ALE TO ZROBIE JAK JUŻ BEDE MIAŁA RESZTE LANDING PAGE. PAMIĘTAJ ŻEBY ODINSTALOWAĆ HASHA
 
@@ -7,27 +7,27 @@ export default function NavigationBar() {
     const navigation = [
         {
             name: 'home',
-            link: '/#',
+            link: 'home',
             content: 'Start'
         },
         {
             name: 'whats_going_on',
-            link: '/#whats_going_on',
+            link: 'whats_going_on',
             content: 'O co chodzi?'
         },
         {
             name: 'about_us',
-            link: '/#about_us',
+            link: 'about_us',
             content: 'O nas'
         },
         {
             name: 'fundations',
-            link: '/#fundations',
+            link: 'fundations',
             content: 'Fundacja i organizacje'
         },
         {
             name: 'contact',
-            link: '/#contact',
+            link: 'contact',
             content: 'Kontakt'
         },
     ]
@@ -37,7 +37,7 @@ export default function NavigationBar() {
         <ul className='navigation-bar'>
         {navigation.map(({ name, link, content }) => (
             <li key={name} className='navigation-button'>
-                <HashLink to={link} smooth className='navigation-text'>{content}</HashLink> 
+                <Scroll to={link} spy={true} smooth={true} offset={-100} duration={1000} className='navigation-text'>{content}</Scroll> 
             </li>
         ))}
         </ul>              
