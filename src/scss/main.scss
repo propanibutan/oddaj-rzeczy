@@ -1,7 +1,9 @@
 @import "~normalize.css/normalize.css";
-@import "generic/grid.scss";
+@import "generic/grid";
 @import "settings/fonts";
-@import "settings/colors.scss";
+@import "settings/colors";
 
 @import "elements/base";
 @import "elements/home-header";
+@import "elements/sign-bar";
+@import "elements/navigation-bar";

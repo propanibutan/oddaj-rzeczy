@@ -7,64 +7,20 @@
 
     .header-image {
         background: transparent url('/assets/Home-Hero-Image.jpg') no-repeat -30.2rem 0;
-        margin-left: -4.25rem;
+        margin-left: -8.85rem;
     }
 
     .header-column {
         display: flex;
         flex-direction: column;
-
-        .login-bar {
-            display: flex;
-            justify-content: flex-end;
-            gap: 0.25rem;
-            margin-right: 1.30rem;
-
-            .login-button {
-                width: 5.625rem;
-                height: 2.25rem;
-                text-align: center;
-                font-size: 0.89rem;
-                line-height: 2rem;
-                color: $color-light-gray;
-                text-decoration: none;
-                &:hover {
-                border: 0.75px solid $color-yellow;  
-                }
-            }
-        }
-
-        .navigation-bar {
-            display: flex;
-            list-style: none;
-            justify-content: flex-end;
-
-            .navigation-button {
-                display: flex;
-                height: 2.625rem;
-                align-items: center;
-                line-height: 1.5rem;
-                margin: 0.25rem;
-                &:hover {
-                border: 0.75px solid $color-dark-gray;  
-                }
-
-                .navigation-text {
-                    color: $color-dark-gray;
-                    text-decoration: none;
-                    font-size: 1.125rem;
-                    margin: 9px 20px;
-                    text-align: center;
-                    white-space: nowrap;
-                }
-            }
-        }
+        justify-content: flex-start;
 
         .header-box {
             color: $color-dark-gray;
             display: flex;
             flex-direction: column;
             padding-top: 225px;
+            width: 674px;
 
             .header-text {
                 font-size: 2rem;
@@ -81,6 +37,7 @@
 
             .header-box_buttons {
                 display: flex;
+                justify-content: center;
                 gap: 2rem;
                 margin-top: 5rem;
 

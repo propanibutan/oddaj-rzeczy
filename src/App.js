@@ -12,7 +12,7 @@ import Logout from './components/Logout';
 
 function App() {
   return (
-    <Router>
+    <Router> 
      <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/oddaj-rzeczy' element={<Form />} />

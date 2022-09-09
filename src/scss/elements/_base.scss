@@ -3,14 +3,18 @@
 
 body {
     font-family: $font-base;
-    padding: 1.5rem 0;
 
-    @media (max-width: 480px) {
-        width: 33.333%;
-    }
+    // @media (max-width: 480px) {
+    //     width: 33.333%;
+    // }
 
-    @media (max-width: 800px) {
-        width: 50%;
-    }
+    // @media (max-width: 800px) {
+    //     width: 50%;
+    // }
 }
 
+#root {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 142px;
+}
