@@ -1,0 +1,50 @@
+@import "../settings/colors";
+@import "../settings/fonts";
+
+.three-columns {
+    height: 384px;
+    list-style: none;
+    background: transparent url('/assets/3-columns-background.png') no-repeat;
+    margin: 0 -8.85rem;
+    // display: flex;
+    // align-items: center;
+
+    .three-columns_all {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 2.875rem 8.85rem;
+        margin: 0;
+
+        .one-column {
+            width: 20.875rem;
+            height: 15.75rem;
+            text-align: center;
+
+            .one-column_number {
+                color: $color-old-yellow;
+                font-size: 5.625rem;
+                font-weight: lighter;
+                line-height: 7.625rem;
+                margin: 0;
+            }
+
+            .one-column_title{
+                color: $color-dark-gray;
+                font-size: 1.125rem;
+                line-height: 1.875rem;
+                letter-spacing: -0.0225rem;
+                margin-top: 0;
+            }
+
+            .one-column_description{
+                color: $color-dark-gray;
+                font-family: $font-alt;
+                font-weight: lighter;
+                line-height: 1.125rem;
+                letter-spacing: -0.02rem;
+                
+            }
+        }  
+    }
+}
