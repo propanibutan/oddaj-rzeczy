@@ -11,8 +11,8 @@ export default function NavigationBar() {
             content: 'Start'
         },
         {
-            name: 'whats_going_on',
-            link: 'whats_going_on',
+            name: 'simple_steps',
+            link: 'simple_steps',
             content: 'O co chodzi?'
         },
         {

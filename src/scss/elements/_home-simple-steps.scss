@@ -1,0 +1,68 @@
+@import "../settings/colors";
+
+.simple-steps {
+    padding-top: 3.4375rem;
+    margin: 0 -8.85rem;
+
+    .simple-steps_title {
+        display: flex;
+        flex-direction: column;
+        color: $color-dark-gray;
+        font-size: 2.375rem;
+        text-align: center;
+        margin-bottom: 2.125rem;
+        white-space: nowrap;
+        letter-spacing: -0.0475rem;
+        line-height: 3.4375rem;
+        gap: 1.5625rem;
+    }
+
+    .simple-steps_columns {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 20.3125rem;
+    list-style: none;
+    background-color: $color-old-white;
+    padding: 2.875rem 8.85rem;
+
+        .simple-steps_one_column {
+            display: flex;
+            flex-direction: column;
+            height: 172px;
+            max-width: 148px;
+            text-align: center;
+            align-items: center;
+
+            .simple-steps_one_column_icon{
+                width: 83px;
+                height: 83px;
+                margin-bottom: 8px;
+            }
+
+            .simple-steps_one_column_title {
+                color: $color-dark-gray;
+                font-size: 18px;
+                line-height: 24px;
+            }
+
+            .simple-steps_one_column_line {
+                width: 70px;
+            }
+
+            .simple-steps_one_column_description {
+                color: $color-dark-gray;
+                height: 40px;
+                margin: 0;
+            }
+        }
+    }
+
+    .simple-steps_button{
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+        margin-bottom: 80px;
+    }
+}
+

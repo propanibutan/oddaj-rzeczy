@@ -1,0 +1,15 @@
+@import '../settings/colors';
+
+.call-to-action__button {
+    width: 19rem;
+    height: 7.5rem;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    text-decoration: none;
+    color: $color-dark-gray;
+    font-weight: lighter;
+    border: 0.75px solid $color-dark-gray;
+    padding: 1rem 0;
+    word-spacing: 100vw;
+}

@@ -1,5 +1,12 @@
 import React from 'react';
  
 export default function HomeAboutUs(){
-    return 
+    return (
+        <div>
+            <div>
+                <span></span>
+                
+            </div>
+        </div>
+    )
 }

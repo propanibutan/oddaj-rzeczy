@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SignBar from '../utils/SignBar';
 import NavigationBar from '../utils/NavigationBar';
-import decoration from '../assets/Decoration.svg';
+import DecorationLine from '../utils/DecorationLine';
+import CallToActionButton from '../utils/CallToActionButton';
 
 export default function HomeHeader(){
 
@@ -18,9 +19,9 @@ export default function HomeHeader(){
                             <span>Zacznij pomagać!</span>
                             <span>Oddaj niechciane rzeczy w zaufane ręce</span>
                         </div>
-                        <img src={decoration} className="header-box_image" alt='dekoracyjna linia'/>
+                        <DecorationLine />
                         <div  className='header-box_buttons'>
-                            <Link to={'/logowanie'} className='header-box__button'>ODDAJ RZECZY</Link>
+                            <CallToActionButton />
                             <Link to={'/logowanie'} className='header-box__button'>ZORGANIZUJ ZBIÓRKĘ</Link> 
                         </div>
                     </header>
