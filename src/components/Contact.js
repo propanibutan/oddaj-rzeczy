@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as API from '../api/contact';
 import ContactForm from './ContactForm';
 import DecorationLine from '../utils/DecorationLine';
+import facebook from '../assets/Facebook.svg';
+import instagram from '../assets/Instagram.svg';
 
 const INITIAL_VALUES = { name: '', email: '', message: '' };
 
@@ -20,11 +22,15 @@ export default function Contact(){
                 <DecorationLine />
                 <ContactForm contact={INITIAL_VALUES} submitLabel='Wyślij' onSubmit={addContact}/>
             </div>
-            <footer>
-                <span>Copyright by Coders Lab</span>
-                <div>
-                    <a href=""/>
-                    <a  href=""/>  
+            <footer className='contact-footer'>
+                <span className='contact-footer_text'>Copyright by Coders Lab</span>
+                <div className='contact-footer_socials'>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+                        <img src={facebook} alt="ikona facebook" className='footer-icon_facebook'/>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"> 
+                        <img src={instagram} alt="ikona instagram"/>
+                    </a>
                 </div>
             </footer>
         </section>

@@ -5,8 +5,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     position: relative;
+    justify-content: flex-end;
 
     &::before {
         content: "";
@@ -22,10 +22,11 @@
     }
 
     .contact-column-wraper {
+        align-self: flex-end;
         display: flex;
         flex-direction: column;
         z-index: 1;
-        margin-top: 200px;
+        margin-bottom: 335px;
 
         .contact-form_title {
             color: $color-dark-gray;
@@ -39,6 +40,25 @@
             margin-top: 4.375rem;
             width: 528px;
             height: 327px;
+        }
+    }
+
+    .contact-footer {
+        z-index: 1;
+        margin-bottom: 19px;
+        display: flex;
+        justify-content: flex-end;
+
+        .contact-footer_text {
+            text-align: center;
+            font-size: 18px;
+            line-height: 24px;
+            position: absolute;
+            left: 46%;
+        }
+
+        .footer-icon_facebook {
+             margin-right: 20px;
         }
     }
 }
