@@ -64,3 +64,20 @@
     }
 }
 
+//ERROR MESSAGES
+.error-message {
+    color: red;
+    font-weight: bolder;
+    font-size: 12px;
+    line-height: 26px;
+}
+
+#message.error-border {
+    border-bottom: 2px solid rgba(255, 0, 0, 0.7);
+}
+#email.error-border {
+    border-bottom: 2px solid rgba(255, 0, 0, 0.7);
+}
+#name.error-border {
+    border-bottom: 2px solid rgba(255, 0, 0, 0.7);
+}
