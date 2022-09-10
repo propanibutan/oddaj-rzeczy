@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: center;
     position: relative;
 
     &::before {
@@ -26,6 +25,7 @@
         display: flex;
         flex-direction: column;
         z-index: 1;
+        margin-top: 200px;
 
         .contact-form_title {
             color: $color-dark-gray;
@@ -33,6 +33,7 @@
             letter-spacing: -0.0475rem;
             line-height: 3.4375rem;
             margin-bottom: 1.5625rem;
+            text-align: center;
         }
         .contact-form {
             margin-top: 4.375rem;

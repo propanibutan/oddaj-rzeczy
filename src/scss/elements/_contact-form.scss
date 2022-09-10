@@ -1,0 +1,66 @@
+@import "../settings/colors.scss";
+
+.contact-form_container {
+    width: 528px;
+    height: 327px;
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+
+        .contact-form_field {
+            display: flex;
+            flex-direction: column;
+            font-weight: bolder;
+            
+            .contact-form_field__input {
+                margin-top: 16px;
+                border: none;
+                border-bottom: 2px solid #B7B7B6;
+                outline: none;
+                background: transparent;
+                font-size: 17px;
+                line-height: 24px;
+                
+                &::placeholder {
+                    opacity: 0.25;
+                    font-size: 17px;
+                }
+            }
+        }
+
+        .small {
+            width: 256px;
+        }
+
+        .large {
+            width: 528px;
+            margin: 40px 0;
+
+            .contact-form_field__input {
+                width: 528px;
+                height: 102px;
+                resize: none;
+                overflow: none;
+            }
+        }
+
+        .contact-form_2_fields {
+        display: flex;
+        justify-content: space-between;
+        }
+
+        .contact-form_button {
+            width: 150px;
+            height: 50px;
+            font-size: 18px;
+            line-height: 2rem;
+            color: #000000;
+            font-weight: lighter;
+            border: 0.75px solid $color-dark-gray;
+            background: transparent;
+            align-self: flex-end;
+        }
+    }
+}
+

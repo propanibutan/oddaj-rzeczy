@@ -7,7 +7,6 @@
     .simple-steps_title {
         display: flex;
         flex-direction: column;
-        color: $color-dark-gray;
         font-size: 2.375rem;
         text-align: center;
         margin-top: 3.4375rem;
@@ -42,7 +41,6 @@
             }
 
             .simple-steps_one_column_title {
-                color: $color-dark-gray;
                 font-size: 1.125rem;
                 line-height: 1.5rem;
             }
@@ -52,7 +50,6 @@
             }
 
             .simple-steps_one_column_description {
-                color: $color-dark-gray;
                 height: 2.5rem;
                 margin: 0;
             }

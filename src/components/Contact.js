@@ -1,43 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import * as API from '../api/contact';
+import ContactForm from './ContactForm';
 import DecorationLine from '../utils/DecorationLine';
 
+const INITIAL_VALUES = { name: '', email: '', message: '' };
+
 export default function Contact(){
+    // const [contacts, setContacts] = useState(null);
+
+    function addContact(contact) {
+        API.sendContact(contact)
+        //   .then(contact => setContacts(contacts => [...contacts, contact]));
+      }
+
     return (
         <section id="contact" className='contact'>
             <div className='contact-column-wraper'>
                 <span className='contact-form_title'>Skontaktuj się z nami</span>
                 <DecorationLine />
-                <form 
-                className='contact-form'
-                // action={FORM_ENDPOINT}
-                // onSubmit={handleSubmit}
-                method="POST"
-                target="_blank"
-                >
-                    <label className="contact-form_input">Wpisz swoje imię
-                        <input type="text" placeholder="Krzysztof" name="name" class="contact_input" required/>
-                    </label>
-                    <div class="contact-form_input">
-                        <input type="email" placeholder="abc@xyz.pl" name="email" class="contact_input" required/>
-                    </div>
-                    <div class="contact-form_input">
-                        <textarea 
-                        placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." 
-                        name="message" 
-                        class="contact_input" 
-                        required
-                        />
-                    </div>
-                    <div>
-                        <button type="submit" className='contact-form_button'>Wyślij</button>
-                    </div>
-                </form>
+                <ContactForm contact={INITIAL_VALUES} submitLabel='Wyślij' onSubmit={addContact}/>
             </div>
             <footer>
                 <span>Copyright by Coders Lab</span>
                 <div>
-                    <img/>
-                    <img/>  
+                    <a href=""/>
+                    <a  href=""/>  
                 </div>
             </footer>
         </section>

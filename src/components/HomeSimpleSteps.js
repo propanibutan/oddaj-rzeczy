@@ -42,8 +42,8 @@ export default function HomeSimpleSteps(){
                 <DecorationLine />
             </div>
             <ul className='simple-steps_columns'>
-            {simpleStepsColumns.map (({ icon, icon_alt, title, description }) => (
-                <li className='simple-steps_one_column'>
+            {simpleStepsColumns.map (({ icon, icon_alt, title, description }, i) => (
+                <li key={i} className='simple-steps_one_column'>
                     <img src={icon} alt={icon_alt} className='simple-steps_one_column_icon' />
                     <span className='simple-steps_one_column_title'>{title}</span>
                     <hr className='simple-steps_one_column_line'/>
