@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import SignBar from '../utils/SignBar';
 import NavigationBar from '../utils/NavigationBar';
 import DecorationLine from '../utils/DecorationLine';
@@ -21,8 +20,8 @@ export default function HomeHeader(){
                         </div>
                         <DecorationLine />
                         <div  className='header-box_buttons'>
-                            <CallToActionButton />
-                            <Link to={'/logowanie'} className='header-box__button'>ZORGANIZUJ ZBIÓRKĘ</Link> 
+                            <CallToActionButton contents="ODDAJ RZECZY" />
+                            <CallToActionButton contents="ZORGANIZUJ ZBIÓRKĘ"/>
                         </div>
                     </header>
                 </div>

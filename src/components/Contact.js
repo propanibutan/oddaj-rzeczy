@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as API from '../api/contact';
 import ContactForm from './ContactForm';
 import DecorationLine from '../utils/DecorationLine';
@@ -8,11 +8,17 @@ import instagram from '../assets/Instagram.svg';
 const INITIAL_VALUES = { name: '', email: '', message: '' };
 
 export default function Contact(){
-    // const [contacts, setContacts] = useState(null);
+    const [success, setSuccess] = useState(false);
+    // const [fatal, setFatal] = useState(false);
+
+//1. JAK ZROBIĆ ŻEBY SUCCESS INFO ZNIKNĘŁO PO WYSŁANIU?
+//2. JAK ZROBIĆ ŻEBY POKAZAŁ SIE FATAL ERROR O TYM, ZE STATUS REQUESTU JEST 400?
 
     function addContact(contact) {
         API.sendContact(contact)
-        //   .then(contact => setContacts(contacts => [...contacts, contact]));
+          .then(setSuccess(true))
+        //   .catch(console.error  => setFatal(true));
+        
       }
 
     return (
@@ -20,6 +26,10 @@ export default function Contact(){
             <div className='contact-column-wraper'>
                 <span className='contact-form_title'>Skontaktuj się z nami</span>
                 <DecorationLine />
+                <div className='contact-form_message'>
+                    {success === true && <span className="success-message">Wiadomość została wysłana! Wkrótce się skontaktujemy.</span>}
+                    {/* {fatal === true && <span className="fatal-message">Ups! Coś poszło źle.</span>}   */}
+                </div>
                 <ContactForm contact={INITIAL_VALUES} submitLabel='Wyślij' onSubmit={addContact}/>
             </div>
             <footer className='contact-footer'>

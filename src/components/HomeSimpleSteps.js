@@ -52,7 +52,7 @@ export default function HomeSimpleSteps(){
             ))}
             </ul>
             <div className='simple-steps_button'>
-                <CallToActionButton />
+                <CallToActionButton contents="ODDAJ RZECZY" />
             </div>
         </section>
     );

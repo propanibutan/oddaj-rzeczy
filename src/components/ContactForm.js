@@ -71,7 +71,9 @@ export default function ContactForm({ contact, submitLabel, onSubmit }) {
                 />
                 {errorMessages?.message && <span className="error-message">{' '}{errorMessages?.message}</span>}
             </label>
-            <input className='contact-form_button' type="submit" value={submitLabel}/>
+            <div className='contant-form_button_container'>
+               <input className='contact-form_button' type="submit" value={submitLabel}/> 
+            </div>
         </form>
     </div>
   )
