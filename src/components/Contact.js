@@ -9,16 +9,13 @@ const INITIAL_VALUES = { name: '', email: '', message: '' };
 
 export default function Contact(){
     const [success, setSuccess] = useState(false);
-    // const [fatal, setFatal] = useState(false);
+    const [fatal, setFatal] = useState(false);
 
-//1. JAK ZROBIĆ ŻEBY SUCCESS INFO ZNIKNĘŁO PO WYSŁANIU?
-//2. JAK ZROBIĆ ŻEBY POKAZAŁ SIE FATAL ERROR O TYM, ZE STATUS REQUESTU JEST 400? MYŚLĘ, ŻE TRZEBA TUTAJ POMYSLEC O PROMISACH?
-
-    function addContact(contact) {
-        API.sendContact(contact)
-          .then(setSuccess(true))
-        //   .catch(console.error  => setFatal(true));
-        
+    function addContact(contact, setError) {
+        API.sendContact(contact, setError)
+          if (setError !== null) {
+            setFatal(true)
+          } else { setSuccess(true)}
       }
 
     return (
@@ -28,9 +25,9 @@ export default function Contact(){
                 <DecorationLine />
                 <div className='contact-form_message'>
                     {success === true && <span className="success-message">Wiadomość została wysłana! Wkrótce się skontaktujemy.</span>}
-                    {/* {fatal === true && <span className="fatal-message">Ups! Coś poszło źle.</span>}   */}
+                    {fatal === true && <span className="fatal-message">Ups! Coś poszło źle. Spróbuj jeszcze raz.</span>}  
                 </div>
-                <ContactForm contact={INITIAL_VALUES} submitLabel='Wyślij' onSubmit={addContact}/>
+                <ContactForm contact={INITIAL_VALUES} submitLabel='Wyślij' onSubmit={(e) => addContact(e, setFatal)}/>
             </div>
             <footer className='contact-footer'>
                 <span className='contact-footer_text'>Copyright by Coders Lab</span>

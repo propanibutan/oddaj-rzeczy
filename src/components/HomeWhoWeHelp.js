@@ -1,17 +1,37 @@
 import React, { useState } from 'react';
-import HomeWhoWeHelpFundations from './HomeWhoWeHelpFundations';
-import HomeWhoWeHelpOrganizations from './HomeWhoWeHelpOrganizations';
-import HomeWhoWeHelpLocal from './HomeWhoWeHelpLocal';
+import HomeWhoWeHelpAll from './HomeWhoWeHelpAll';
 import DecorationLine from '../utils/DecorationLine';
+import fundData from '../data/fundations.json';
+import orgData from '../data/organizations.json';
+import localData from '../data/locals.json';
  
 export default function HomeWhoWeHelp(){
     const key = ["fundations", "organizations", "local"]
 
     const [isShown, setIsShown] = useState("fundations");
-    
-    const handleClickFund = (event) => setIsShown(key[0]);
-    const handleClickOrg = (event) => setIsShown(key[1]);
-    const handleClickLoc = (event) => setIsShown(key[2]);
+    const [data, setData] = useState(fundData);
+
+    const handleClick = (key) => {
+        if (key === "fundations") {
+            setIsShown(key)
+            setData(fundData)
+        } 
+        if (key === "organizations"){
+            setIsShown(key)
+            setData(orgData)
+        }
+        if (key === "local") {
+            setIsShown(key)
+            setData(localData)
+        }
+
+    }
+
+    const text = {
+        fundText: "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.",
+        orgText: "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        localText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+    }
 
     return (
         <section id="fundations" className='who-help'>
@@ -21,13 +41,13 @@ export default function HomeWhoWeHelp(){
                     <DecorationLine /> 
                 </div>
                 <div className='we-help_buttons'> 
-                    <button type="button" onClick={handleClickFund} className="we-help_single_button">Fundacjom</button>
-                    <button type="button" onClick={handleClickOrg} className="we-help_single_button">Organizacjom pozarządowym</button>
-                    <button type="button" onClick={handleClickLoc} className="we-help_single_button">Lokalnym zbiórkom</button>
+                    <button type="button" onClick={(e) => handleClick(key[0])} className="we-help_single_button">Fundacjom</button>
+                    <button type="button" onClick={(e) => handleClick(key[1])} className="we-help_single_button">Organizacjom pozarządowym</button>
+                    <button type="button" onClick={(e) => handleClick(key[2])} className="we-help_single_button">Lokalnym zbiórkom</button>
                 </div>
-                {isShown === "fundations" && (<HomeWhoWeHelpFundations />)}
-                {isShown === "organizations" && (<HomeWhoWeHelpOrganizations />)}
-                {isShown === "local" && (<HomeWhoWeHelpLocal />)}
+                {isShown === "fundations" && (<HomeWhoWeHelpAll data={data} text={text.fundText} />)}
+                {isShown === "organizations" && (<HomeWhoWeHelpAll data={data} text={text.orgText} />)}
+                {isShown === "local" && (<HomeWhoWeHelpAll data={data} text={text.localText} />)}
             </div>
         </section>
     );

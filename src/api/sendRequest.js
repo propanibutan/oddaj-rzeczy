@@ -1,6 +1,6 @@
 import { BASE_URL } from "./config";
 
-export default function sendRequest(method, path, data) {
+export default function sendRequest(method, path, data, setError) {
   const url = new URL(path, BASE_URL);
 
   return fetch(url, {
@@ -9,12 +9,13 @@ export default function sendRequest(method, path, data) {
     headers: {
       'Content-Type': 'application/json',
     },
-  })
+    })
+    .then(response => response.json())
     .then(response => {
-      if (!response.ok) {
-        throw new Error(`${response.status} (${response.statusText})`);
+      if (response.status === "error"){
+        setError(response.errors[0].msg)
       }
       return response;
     })
-    .then(response => response.json());
+    .catch(err => console.log(err));
 }

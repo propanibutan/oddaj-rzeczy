@@ -6,12 +6,17 @@
     
     .all-table{
         margin-top: 66px;
-        min-height: 553px;
+        height: 280px;
 
         .all-single {
         display: flex;
         height: 81px;
         flex-direction: column;
+        border-bottom: 1px solid #707070;
+
+        &:last-child {
+            border: none;
+        }
 
             .all-single_text {
                 display: flex;
@@ -24,10 +29,6 @@
                         margin: 0;
                     }
                 }
-            }
-
-            .all-single_line {
-                width: 100%;
             }
         }
     }

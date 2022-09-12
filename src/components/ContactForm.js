@@ -19,7 +19,7 @@ export default function ContactForm({ contact, submitLabel, onSubmit }) {
         setErrorMessages(errorMessages);
         if (errorMessages) return;
 
-        if (typeof onSubmit !== 'function') return;
+        if (typeof onSubmit !== 'function');
         onSubmit(values);
         setValues(contact);
     }

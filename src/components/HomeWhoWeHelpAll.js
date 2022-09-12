@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import JsonData from "../data/fundations.json";
 import ReactPaginate from 'react-paginate';
 
-export default function HomeWhoWeHelpFundations() {
-  const [items, setItems] = useState(JsonData);
+export default function HomeWhoWeHelpAll({ data, text }) {
+  const [items, setItems] = useState(data);
   const [pageNumber, setPageNumber] = useState(0);
 
   const itemsPerPage = 3;
@@ -20,7 +19,6 @@ export default function HomeWhoWeHelpFundations() {
           </div>
           <p className='all-single_text__give'>{give}</p>
         </div>
-        <hr className='all-single_line'/>
       </li>
     ));
 
@@ -30,13 +28,13 @@ export default function HomeWhoWeHelpFundations() {
     setPageNumber(selected);
   }
 
-  //IF U LOOK FOR SCSS FILE CHECK WHO-WE-HELP-ALL.SCSS
   return (
     <div className='all-container'>
-      <span className='all-description'>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</span>
+      <span className='all-description'>{text}</span>
       <ul className='all-table'>
        {displayItems}
-       <ReactPaginate 
+      </ul>
+      {pageCount > 1 && <ReactPaginate 
         pageCount={pageCount}
         onPageChange={changePage}
         containerClassName={"pagination-buttons"}
@@ -44,8 +42,7 @@ export default function HomeWhoWeHelpFundations() {
         nextClassName={"next-button"}
         disabledClassName={"paginationDisabled"}
         activeClassName={"pagination-active"}
-        />
-      </ul>
+        />}
     </div>
   )
 }
