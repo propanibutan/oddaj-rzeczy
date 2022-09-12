@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "name": "Fundacja “Dbam o Zdrowie”",
+        "description": "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
+        "give": "ubrania, jedzenie, sprzęt AGD, meble, zabawki"
+    },
+    {
+        "id": 2,
+        "name": "Fundacja “Dla dzieci”",
+        "description": "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
+        "give": "ubrania, meble, zabawki"
+    },
+    {
+        "id": 3,
+        "name": "Fundacja “Bez domu”",
+        "description": "Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.",
+        "give": "ubrania, jedzenie, ciepłe koce"
+    },
+    {
+        "id": 4,
+        "name": "Fundacja “Dbam o Zdrowie”",
+        "description": "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
+        "give": "ubrania, jedzenie, sprzęt AGD, meble, zabawki"
+    },
+    {
+        "id": 5,
+        "name": "Fundacja “Dla dzieci”",
+        "description": "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
+        "give": "ubrania, meble, zabawki"
+    },
+    {
+        "id": 6,
+        "name": "Fundacja “Dla dzieci”",
+        "description": "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
+        "give": "ubrania, meble, zabawki"
+    },
+    {
+        "id": 7,
+        "name": "Fundacja “Dla dzieci”",
+        "description": "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
+        "give": "ubrania, meble, zabawki"
+    }
+]
+

@@ -12,7 +12,7 @@ export default function Contact(){
     // const [fatal, setFatal] = useState(false);
 
 //1. JAK ZROBIĆ ŻEBY SUCCESS INFO ZNIKNĘŁO PO WYSŁANIU?
-//2. JAK ZROBIĆ ŻEBY POKAZAŁ SIE FATAL ERROR O TYM, ZE STATUS REQUESTU JEST 400?
+//2. JAK ZROBIĆ ŻEBY POKAZAŁ SIE FATAL ERROR O TYM, ZE STATUS REQUESTU JEST 400? MYŚLĘ, ŻE TRZEBA TUTAJ POMYSLEC O PROMISACH?
 
     function addContact(contact) {
         API.sendContact(contact)

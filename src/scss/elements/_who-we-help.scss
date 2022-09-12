@@ -1,0 +1,14 @@
+@import "../settings/colors";
+
+.who-help_container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    .we-help_title {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}

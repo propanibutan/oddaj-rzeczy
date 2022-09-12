@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Zbiórka “Lorem Ipsum 1””",
+        "description": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+        "give": "Egestas, sed, tempus"
+    },
+    {
+        "id": 2,
+        "name": "Zbiórka “Lorem Ipsum 2”",
+        "description": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+        "give": "Ut, aliquam, purus, sit, amet"
+    },
+    {
+        "id": 3,
+        "name": "Zbiórka “Lorem Ipsum 3”",
+        "description": "Scelerisque in dictum non consectetur a erat nam.",
+        "give": "Mi, quis, hendrerit, dolor"
+    }
+]

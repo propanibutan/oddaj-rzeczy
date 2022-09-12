@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Organizacja “Lorem Ipsum 1”",
+        "description": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+        "give": "Egestas, sed, tempus"
+    },
+    {
+        "id": 2,
+        "name": "Organizacja “Lorem Ipsum 2”",
+        "description": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+        "give": "Ut, aliquam, purus, sit, amet"
+    },
+    {
+        "id": 3,
+        "name": "Organizacja “Lorem Ipsum 3”",
+        "description": "Scelerisque in dictum non consectetur a erat nam.",
+        "give": "Mi, quis, hendrerit, dolor"
+    },
+    {
+        "id": 4,
+        "name": "Organizacja “Lorem Ipsum 4”",
+        "description": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+        "give": "Egestas, sed, tempus"
+    },
+    {
+        "id": 5,
+        "name": "Organizacja “Lorem Ipsum 5”",
+        "description": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+        "give": "Egestas, sed, tempus"
+    },
+    {
+        "id": 6,
+        "name": "Organizacja “Lorem Ipsum 6”",
+        "description": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+        "give": "Egestas, sed, tempus"
+    }
+]

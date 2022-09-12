@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link as Scroll } from 'react-scroll';
 
-//NOTES: TU TRZEBA JEDNAK UŻYC SCROLLA ALE TO ZROBIE JAK JUŻ BEDE MIAŁA RESZTE LANDING PAGE. PAMIĘTAJ ŻEBY ODINSTALOWAĆ HASHA
-
 export default function NavigationBar() {
     const navigation = [
         {
