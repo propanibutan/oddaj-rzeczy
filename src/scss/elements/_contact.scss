@@ -1,7 +1,7 @@
 @import "../settings/colors";
 
 .contact {
-    height: 1026px;
+    height: 64.125rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
         display: flex;
         flex-direction: column;
         z-index: 1;
-        margin-bottom: 270px;
+        margin-bottom: 16.875rem;
 
         .contact-form_title {
             color: $color-dark-gray;
@@ -38,30 +38,30 @@
         }
 
         .contact-form_message{
-            padding-top: 40px;
-            padding-bottom: 30px;
+            padding-top: 2.5rem;
+            padding-bottom: 1.875rem;
             display: flex;
             justify-content: center;
             box-sizing: content-box;
 
             //SUCCESS MESSAGE
             .success-message {
-                width: 300px;
+                width: 18.75rem;
                 color: #2D9E22;
                 font-weight: bolder;
-                font-size: 18px;
-                line-height: 26px;
+                font-size: 1.125rem;
+                line-height: 1.625rem;
                 text-align: center;
                 align-self: center;
             }
 
             //FATAL MESSAGE
             .fatal-message {
-                width: 300px;
+                width: 18.75rem;
                 color: red;
                 font-weight: bolder;
-                font-size: 18px;
-                line-height: 26px;
+                font-size: 1.125rem;
+                line-height: 1.625rem;
                 text-align: center;
                 align-self: center;
             }
@@ -70,21 +70,20 @@
 
     .contact-footer {
         z-index: 1;
-        margin-bottom: 19px;
+        margin-bottom: 1.1875rem;
         display: flex;
         justify-content: flex-end;
 
         .contact-footer_text {
             text-align: center;
-            font-size: 18px;
-            line-height: 24px;
+            font-size: 1.125rem;
+            line-height: 1.5rem;
             position: absolute;
             left: 46%;
         }
 
         .footer-icon_facebook {
-             margin-right: 20px;
+             margin-right: 1.25rem;
         }
     }
 }
-

@@ -5,10 +5,47 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    margin-top: 4.375rem;
+    margin-bottom: 5rem;
+    height: 53.875rem;
 
     .we-help_title {
         display: flex;
         flex-direction: column;
         text-align: center;
+        font-size: 2.375rem;
+        letter-spacing: -0.0475rem;
+        margin-bottom: 3.125rem;
+
+        span {
+            margin-bottom: 1.5625rem;
+        }
     }
+
+    .we-help_buttons {
+        display: flex;
+        gap: 6.25rem;
+
+        .we-help_single_button {
+            width: 13rem;
+            height: 4.9375rem;
+            background: none;
+            border: 0.046875rem solid $color-pure-white;
+            font-size: 1.5rem;
+            color: $color-dark-gray;
+            cursor: pointer;
+
+            &:hover {
+                border: 0.046875rem solid $color-dark-gray;  
+            }
+
+            &:focus {
+                border: 0.046875rem solid $color-dark-gray;
+            }
+        }
+    }
+}
+
+#button.choose-button {
+    border: 0.046875rem solid $color-dark-gray;
 }

@@ -10,6 +10,7 @@ export default function HomeWhoWeHelp(){
 
     const [isShown, setIsShown] = useState("fundations");
     const [data, setData] = useState(fundData);
+    
 
     const handleClick = (key) => {
         if (key === "fundations") {
@@ -34,14 +35,14 @@ export default function HomeWhoWeHelp(){
     }
 
     return (
-        <section id="fundations" className='who-help'>
+        <section id="fundations">
             <div className='who-help_container'>
                 <div className='we-help_title'>
                     <span>Komu pomagamy?</span>
                     <DecorationLine /> 
                 </div>
                 <div className='we-help_buttons'> 
-                    <button type="button" onClick={(e) => handleClick(key[0])} className="we-help_single_button">Fundacjom</button>
+                    <button id="button" type="button" onClick={(e) => handleClick(key[0])} className={`we-help_single_button ${isShown === "fundations" ? "choose-button" : ""}`}>Fundacjom</button>
                     <button type="button" onClick={(e) => handleClick(key[1])} className="we-help_single_button">Organizacjom pozarządowym</button>
                     <button type="button" onClick={(e) => handleClick(key[2])} className="we-help_single_button">Lokalnym zbiórkom</button>
                 </div>

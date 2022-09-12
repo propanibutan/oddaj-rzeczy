@@ -1,33 +1,60 @@
 @import "../settings/colors";
+@import "../settings/fonts";
 
 .all-container {
-    width: 1344px;
-    list-style: none;
+    width: 84rem;
+    margin-top: 4.375rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .all-description{
+        display: flex;
+        text-align: center;
+        align-self: center;
+        width: 40rem;
+        height: 5.875rem;
+        font-size: 1.375rem;
+        line-height: 1.875rem;
+    }
     
     .all-table{
-        margin-top: 66px;
-        height: 280px;
+        margin-top: 4.125rem;
 
         .all-single {
         display: flex;
-        height: 81px;
+        height: 5.0625rem;
         flex-direction: column;
-        border-bottom: 1px solid #707070;
+        border-bottom: 0.046875rem solid #707070;
+        font-family: $font-alt;
+        margin: 1.9375rem 0;
 
         &:last-child {
             border: none;
+            margin: 0;
         }
 
             .all-single_text {
                 display: flex;
                 justify-content: space-between;
+                height: 3.125rem;
 
                 .all-single_text__main {
                     text-align: left;
 
+                    .all-single_text__name{
+                        font-size: 1.625rem;
+                    }
+
                     .all-single_text__description {
                         margin: 0;
+                        font-size: 1.125rem;
+                        font-style: italic;
                     }
+                }
+
+                .all-single_text__give {
+                    font-size: 1.125rem;
                 }
             }
         }
@@ -37,7 +64,7 @@
 //STYLING FOR PAGINATION
 .pagination-buttons {
     width: 100%;
-    height: 66px;
+    height: 4.125rem;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -49,20 +76,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 0.75px solid $color-pure-white;
-        margin: 8px;
-        width: 40px;
-        height: 32px;
-        font-size: 18px;
+        border: 0.046875rem solid $color-pure-white;
+        margin: 0.5rem;
+        width: 2.5rem;
+        height: 2rem;
+        font-size: 1.125rem;
         cursor: pointer;
     }
 
 .pagination-active {
     display: flex;
     align-items: center;
-    border: 1px solid #707070;
-    margin: 8px;
-    width: 40px;
+    border: 0.0625rem solid #707070;
+    margin: 0.5rem;
+    width: 2.5rem;
 }
 
 .previous-button {
