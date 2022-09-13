@@ -11,11 +11,18 @@ export default function Contact(){
     const [success, setSuccess] = useState(false);
     const [fatal, setFatal] = useState(false);
 
+    const clearState = () => { setSuccess(false); }
+    //Tutaj wymaga poprawy pokazywanie wiadomości o fatal errorze + czyszczenie stanu żeby successs nie był cały czas.
+    // if (typeof setError !== 'function') {
+    //     setFatal(true)
+    //   } else { 
+    //     setSuccess(true)
+    //   })
+
+
     function addContact(contact, setError) {
         API.sendContact(contact, setError)
-          if (setError !== null) {
-            setFatal(true)
-          } else { setSuccess(true)}
+          .then(setSuccess(true))
       }
 
     return (
@@ -25,7 +32,7 @@ export default function Contact(){
                 <DecorationLine />
                 <div className='contact-form_message'>
                     {success === true && <span className="success-message">Wiadomość została wysłana! Wkrótce się skontaktujemy.</span>}
-                    {fatal === true && <span className="fatal-message">Ups! Coś poszło źle. Spróbuj jeszcze raz.</span>}  
+                    {/* {fatal === true && <span className="fatal-message">Ups! Coś poszło źle. Spróbuj jeszcze raz.</span>}   */}
                 </div>
                 <ContactForm contact={INITIAL_VALUES} submitLabel='Wyślij' onSubmit={(e) => addContact(e, setFatal)}/>
             </div>

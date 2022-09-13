@@ -57,13 +57,8 @@
 
             //FATAL MESSAGE
             .fatal-message {
-                width: 18.75rem;
+                @extend .success-message;
                 color: red;
-                font-weight: bolder;
-                font-size: 1.125rem;
-                line-height: 1.625rem;
-                text-align: center;
-                align-self: center;
             }
         }
     }

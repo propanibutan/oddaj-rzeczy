@@ -77,12 +77,8 @@
     line-height: 1.625rem;
 }
 
-#message.error-border {
-    border-bottom: 0.125rem solid rgba(255, 0, 0, 0.7);
-}
-#email.error-border {
-    border-bottom: 0.125rem solid rgba(255, 0, 0, 0.7);
-}
+#message.error-border, 
+#email.error-border, 
 #name.error-border {
     border-bottom: 0.125rem solid rgba(255, 0, 0, 0.7);
 }
