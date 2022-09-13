@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate as navigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase-config';
 import SignBar from '../utils/SignBar';
 import NavigationBar from '../utils/NavigationBar';
 import DecorationLine from '../utils/DecorationLine';
@@ -8,10 +10,14 @@ import validate from './signFormValidation';
 
 //SCSS file for this is sign_form.scss
 
-export default function Login({ generalError, onSubmit }) {
+export default function Login({ onLoggedIn }) {
   const [values, setValues] = useState({ email:'', password:'', password2:'' });
   const [errorMessages, setErrorMessages] = useState(null);
-  
+  const [generalError, setGeneralError] = useState(null);
+
+  // const navigate = useNavigate();
+
+  //move value to state and put in right key
   function handleChange(event) {
     const { name, value } = event.target;
 
@@ -21,16 +27,37 @@ export default function Login({ generalError, onSubmit }) {
     }));
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = async(event) => {
     event.preventDefault();
+    //first validation
+    
     const errorMessages = validate(values);
     setErrorMessages(errorMessages);
-
     if (errorMessages) { return; }
 
-    if (typeof onSubmit === 'function') {
-        onSubmit(values);
-    }
+    //if ok. can send request for login
+    loginUser(values.email, values.password);
+  }
+
+  const loginUser = async ({ email, password }) => {
+    setGeneralError(null);
+    try {
+        const user = await signInWithEmailAndPassword(auth, email, password);
+        handleSuccessfulLogIn();
+        console.log('loggedin:', user);
+    } catch (error) {
+      handleFailedLogIn(error.message);
+      console.log('signin:', error.message); 
+  }
+    navigate('/');
+  }
+
+  function handleSuccessfulLogIn(user) {
+    onLoggedIn(user);
+  }
+
+  function handleFailedLogIn(errorMessage) {
+    setGeneralError(errorMessage);
   }
 
   return (
@@ -43,6 +70,7 @@ export default function Login({ generalError, onSubmit }) {
           <DecorationLine />
         </div>
         <div>
+          {generalError && ( <span>{generalError}</span> )}
           <form className='sign-section_form' onSubmit={handleSubmit}>
             <div className='sign-section_inputs'>
               <SignInput

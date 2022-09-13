@@ -43,18 +43,17 @@ export default function Register() {
   const createUser = async ({ email, password }) => {
     setGeneralError(null);
     try {
-        const user = await createUserWithEmailAndPassword(auth, email, password);
-        await setDoc(doc(db, 'users', user.user.uid), {
-            email: values.email,
-            password: values.password,
-            timeStamp: serverTimestamp(),
-        })
-        console.log('loggedin:', user);
+      const user = await createUserWithEmailAndPassword(auth, email, password);
+      await setDoc(doc(db, 'users', user.user.uid), {
+          email: values.email,
+          password: values.password,
+          timeStamp: serverTimestamp(),
+      })
     } catch (error) {
       handleFailedLogIn(error.message);
       console.log('signup:', error.message); 
-  }
-    navigate('/');
+    }
+      navigate('/');
   }
 
   function handleFailedLogIn(errorMessage) {
