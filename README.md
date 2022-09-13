@@ -21,5 +21,5 @@ Magda przeprowadziła wiele badań i obserwacji na podstawie, których przygotow
 -----------------------------------------------------------------
 
 ## Technologie i narzędzia / Technologies
-- **React** (Create React App, react-scroll, react-router-dom, react-paginate)
+- **React** (Create React App, react-router-hash-link, react-router-dom, react-paginate)
 - **Sass** (normalize.css)
