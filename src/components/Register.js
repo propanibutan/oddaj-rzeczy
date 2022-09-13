@@ -1,13 +1,66 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState }  from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { setDoc, doc, serverTimestamp } from 'firebase/firestore';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, db } from '../firebase-config';
 import SignBar from '../utils/SignBar';
 import NavigationBar from '../utils/NavigationBar';
 import DecorationLine from '../utils/DecorationLine';
 import SignInput from '../utils/SignInput';
+import validate from './signFormValidation';
 
 //SCSS file for this is sign_form.scss
 
 export default function Register() {
+  const [values, setValues] = useState({ email:'', password:'', password2:'' });
+  const [errorMessages, setErrorMessages] = useState(null);
+  const [generalError, setGeneralError] = useState(null);
+
+  const navigate = useNavigate();
+
+  //move value to state and put in right key
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setValues(prevValues => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  }
+
+  const handleSubmit = async(event) => {
+    event.preventDefault();
+    //first validation
+    
+    const errorMessages = validate(values);
+    setErrorMessages(errorMessages);
+    if (errorMessages) { return; }
+
+    //if ok. can send request for registration
+    createUser(values);
+  }
+
+  const createUser = async ({ email, password }) => {
+    setGeneralError(null);
+    try {
+        const user = await createUserWithEmailAndPassword(auth, email, password);
+        await setDoc(doc(db, 'users', user.user.uid), {
+            email: values.email,
+            password: values.password,
+            timeStamp: serverTimestamp(),
+        })
+        console.log('loggedin:', user);
+    } catch (error) {
+      handleFailedLogIn(error.message);
+      console.log('signup:', error.message); 
+  }
+    navigate('/');
+  }
+
+  function handleFailedLogIn(errorMessage) {
+    setGeneralError(errorMessage);
+  }
+
   return (
     <div className='grid-container'>
       <SignBar />
@@ -18,28 +71,32 @@ export default function Register() {
           <DecorationLine />
         </div>
         <div>
-          <form className='sign-section_form'>
+        {generalError && ( <span>{generalError}</span> )}
+          <form className='sign-section_form' onSubmit={handleSubmit}>
             <div className='sign-section_inputs'>
               <SignInput 
                 label="Email" 
                 name="email" 
-                type="text" 
-                // errorMessage={errorMessages?.email}
-                // onChange={(event) => {setLoginEmail(event.target.value);}}
+                type="text"
+                value={values.email}
+                errorMessage={errorMessages?.email}
+                onChange={handleChange}
               />
               <SignInput 
                 label="Hasło" 
                 name="password" 
                 type="password"
-                // errorMessage={errorMessages?.password}
-                // onChange={(event) => {setLoginPassword(event.target.value);}}
+                value={values.password}
+                errorMessage={errorMessages?.password}
+                onChange={handleChange}
               />
               <SignInput 
                 label="Powtórz hasło" 
-                name="password" 
+                name="password2" 
                 type="password"
-                // errorMessage={errorMessages?.password}
-                // onChange={(event) => {setLoginPassword(event.target.value);}}
+                value={values.password2}
+                errorMessage={errorMessages?.password2}
+                onChange={handleChange}
               />
             </div>
             <div className='sign-section_buttons'>

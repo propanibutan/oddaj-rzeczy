@@ -1,30 +1,37 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase-config';
 import SignBar from '../utils/SignBar';
 import NavigationBar from '../utils/NavigationBar';
 import DecorationLine from '../utils/DecorationLine';
 import SignInput from '../utils/SignInput';
+import validate from './signFormValidation';
 
 //SCSS file for this is sign_form.scss
 
-export default function Login() {
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+export default function Login({ generalError, onSubmit }) {
+  const [values, setValues] = useState({ email:'', password:'', password2:'' });
+  const [errorMessages, setErrorMessages] = useState(null);
   
-  const login = async () => {
-    try {
-      const user = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword
-      );
-      console.log("user", user);
-    } catch (error) {
-      console.log("error:", error.message);
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setValues(prevValues => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const errorMessages = validate(values);
+    setErrorMessages(errorMessages);
+
+    if (errorMessages) { return; }
+
+    if (typeof onSubmit === 'function') {
+        onSubmit(values);
     }
-  };
+  }
 
   return (
     <div className='grid-container'>
@@ -36,21 +43,23 @@ export default function Login() {
           <DecorationLine />
         </div>
         <div>
-          <form className='sign-section_form' onSubmit={login}>
+          <form className='sign-section_form' onSubmit={handleSubmit}>
             <div className='sign-section_inputs'>
-              <SignInput 
+              <SignInput
                 label="Email" 
                 name="email" 
                 type="text" 
-                // errorMessage={errorMessages?.email}
-                onChange={(event) => {setLoginEmail(event.target.value);}}
+                value={values.email}
+                errorMessage={errorMessages?.email}
+                onChange={handleChange}
               />
-              <SignInput 
+              <SignInput
                 label="Hasło" 
                 name="password" 
                 type="password"
-                // errorMessage={errorMessages?.password}
-                onChange={(event) => {setLoginPassword(event.target.value);}}
+                value={values.password}
+                errorMessage={errorMessages?.password}
+                onChange={handleChange}
               />
             </div>
             <div className='sign-section_buttons'>
