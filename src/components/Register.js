@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SignBar from '../utils/SignBar';
 import NavigationBar from '../utils/NavigationBar';
 import DecorationLine from '../utils/DecorationLine';
@@ -8,24 +9,42 @@ import SignInput from '../utils/SignInput';
 
 export default function Register() {
   return (
-    <div>
+    <div className='grid-container'>
       <SignBar />
       <NavigationBar />
-      <section className='register-section'>
-        <div>
-          <span>Załóż konto</span>
+      <section className='sign-section'>
+        <div className='sign-section_title__box'>
+          <span className='sign-section_title'>Załóż konto</span>
           <DecorationLine />
         </div>
         <div>
-          <form>
-            <div>
-              <SignInput />
-              <SignInput />
-              <SignInput />
+          <form className='sign-section_form'>
+            <div className='sign-section_inputs'>
+              <SignInput 
+                label="Email" 
+                name="email" 
+                type="text" 
+                // errorMessage={errorMessages?.email}
+                // onChange={(event) => {setLoginEmail(event.target.value);}}
+              />
+              <SignInput 
+                label="Hasło" 
+                name="password" 
+                type="password"
+                // errorMessage={errorMessages?.password}
+                // onChange={(event) => {setLoginPassword(event.target.value);}}
+              />
+              <SignInput 
+                label="Powtórz hasło" 
+                name="password" 
+                type="password"
+                // errorMessage={errorMessages?.password}
+                // onChange={(event) => {setLoginPassword(event.target.value);}}
+              />
             </div>
-            <div>
-                <input type="submit" value="Zaloguj sie"/>
-                <input type="submit" value="Załóż konto"/>
+            <div className='sign-section_buttons'>
+              <Link to={'/logowanie'} className='sign-section_button'>Zaloguj się</Link>
+              <input type="submit" value="Załóż konto" className='sign-section_button'/>
             </div>
           </form>
         </div>

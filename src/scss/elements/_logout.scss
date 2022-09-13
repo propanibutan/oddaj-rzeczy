@@ -1,0 +1,27 @@
+@import "../settings/colors";
+
+.logout-section_title {
+    width: 414px;
+    font-size: 40px;
+    letter-spacing: -0.8px;
+    line-height: 55px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.logout-section_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    border: 0.046875rem solid $color-dark-gray; 
+    background: $color-pure-white;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: lighter;
+    color: black;
+    text-decoration: none;
+    margin-top: 35px;
+}

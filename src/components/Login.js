@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase-config';
 import SignBar from '../utils/SignBar';
 import NavigationBar from '../utils/NavigationBar';
 import DecorationLine from '../utils/DecorationLine';
@@ -8,6 +10,22 @@ import SignInput from '../utils/SignInput';
 //SCSS file for this is sign_form.scss
 
 export default function Login() {
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  
+  const login = async () => {
+    try {
+      const user = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword
+      );
+      console.log("user", user);
+    } catch (error) {
+      console.log("error:", error.message);
+    }
+  };
+
   return (
     <div className='grid-container'>
       <SignBar />
@@ -18,10 +36,22 @@ export default function Login() {
           <DecorationLine />
         </div>
         <div>
-          <form className='sign-section_form'>
+          <form className='sign-section_form' onSubmit={login}>
             <div className='sign-section_inputs'>
-              <SignInput />
-              <SignInput />
+              <SignInput 
+                label="Email" 
+                name="email" 
+                type="text" 
+                // errorMessage={errorMessages?.email}
+                onChange={(event) => {setLoginEmail(event.target.value);}}
+              />
+              <SignInput 
+                label="Hasło" 
+                name="password" 
+                type="password"
+                // errorMessage={errorMessages?.password}
+                onChange={(event) => {setLoginPassword(event.target.value);}}
+              />
             </div>
             <div className='sign-section_buttons'>
               <Link to={'/rejestracja'} className='sign-section_button'>Załóż konto</Link>
