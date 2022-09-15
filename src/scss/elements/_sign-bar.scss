@@ -6,6 +6,15 @@
     gap: 0.25rem;
     margin-right: 1.30rem;
 
+    .login-hello{
+        margin-right: 20px;
+        color: black;
+        font-size: 14px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
     .login-button {
         width: 5.625rem;
         height: 2.25rem;

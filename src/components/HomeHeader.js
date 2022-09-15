@@ -1,17 +1,26 @@
-import React from 'react';
+import { useState } from 'react';
 import SignBar from '../utils/SignBar';
+import SignedBar from '../utils/SignedBar';
 import NavigationBar from '../utils/NavigationBar';
 import DecorationLine from '../utils/DecorationLine';
 import CallToActionButton from '../utils/CallToActionButton';
 
-export default function HomeHeader(){
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../firebase-config';
 
+export default function HomeHeader(){
+    const [signedIn, setSignedIn] = useState(null)
+
+    onAuthStateChanged(auth, (currentUser) => {
+    setSignedIn(currentUser);
+    });
+    
     return (
         <div id='home' className='grid-container'>
             <div className='row header'>
                 <div className='col-6 header-image'/>
                 <div className='col-6 header-column'>
-                    <SignBar />
+                    {signedIn ? <SignedBar /> : <SignBar />}
                     <NavigationBar />
                     <header className='header-box'>
                         <div className='header-text'>

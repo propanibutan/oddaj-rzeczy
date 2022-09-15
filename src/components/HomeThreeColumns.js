@@ -1,5 +1,3 @@
-import React from 'react';
- 
 export default function HomeThreeColumns(){
     return (
         <section className='three-columns'>

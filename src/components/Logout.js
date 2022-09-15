@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import SignBar from '../utils/SignBar';
 import NavigationBar from '../utils/NavigationBar';

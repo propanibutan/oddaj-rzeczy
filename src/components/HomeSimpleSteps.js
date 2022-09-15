@@ -1,4 +1,3 @@
-import React from 'react';
 import DecorationLine from '../utils/DecorationLine';
 import CallToActionButton from '../utils/CallToActionButton';
 import icon1 from '../assets/Icon-1.svg';

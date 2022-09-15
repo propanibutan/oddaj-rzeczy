@@ -1,4 +1,3 @@
-import React from 'react';
 import DecorationLine from '../utils/DecorationLine';
 import signature from '../assets/Signature.svg';
  

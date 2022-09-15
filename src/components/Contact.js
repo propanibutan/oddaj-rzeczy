@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import * as API from '../api/contact';
 import ContactForm from './ContactForm';
 import DecorationLine from '../utils/DecorationLine';

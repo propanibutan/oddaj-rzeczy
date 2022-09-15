@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate as navigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase-config';
 import SignBar from '../utils/SignBar';
@@ -9,13 +9,11 @@ import SignInput from '../utils/SignInput';
 import validate from './signFormValidation';
 
 //SCSS file for this is sign_form.scss
-
-export default function Login({ onLoggedIn }) {
-  const [values, setValues] = useState({ email:'', password:'', password2:'' });
+export default function Login() {
+  const [values, setValues] = useState({ email:'', password:'' });
   const [errorMessages, setErrorMessages] = useState(null);
   const [generalError, setGeneralError] = useState(null);
-
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   //move value to state and put in right key
   function handleChange(event) {
@@ -29,35 +27,20 @@ export default function Login({ onLoggedIn }) {
 
   const handleSubmit = async(event) => {
     event.preventDefault();
+
     //first validation
-    
     const errorMessages = validate(values);
     setErrorMessages(errorMessages);
     if (errorMessages) { return; }
 
-    //if ok. can send request for login
-    loginUser(values.email, values.password);
-  }
-
-  const loginUser = async ({ email, password }) => {
-    setGeneralError(null);
-    try {
-        const user = await signInWithEmailAndPassword(auth, email, password);
-        handleSuccessfulLogIn();
-        console.log('loggedin:', user);
-    } catch (error) {
-      handleFailedLogIn(error.message);
-      console.log('signin:', error.message); 
-  }
-    navigate('/');
-  }
-
-  function handleSuccessfulLogIn(user) {
-    onLoggedIn(user);
-  }
-
-  function handleFailedLogIn(errorMessage) {
-    setGeneralError(errorMessage);
+    //if ok. try sign user
+    signInWithEmailAndPassword(auth, values.email, values.password)
+    .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("user:", user)
+      navigate('/')
+    })
+    .catch(error => {setGeneralError("Podano niewłaściwe dane.")})
   }
 
   return (

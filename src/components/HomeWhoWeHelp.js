@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import HomeWhoWeHelpAll from './HomeWhoWeHelpAll';
 import DecorationLine from '../utils/DecorationLine';
 import fundData from '../data/fundations.json';

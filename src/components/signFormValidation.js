@@ -30,13 +30,17 @@ export default function contactFormValidation(values) {
     }
 
     
-    if (values.password2.length < 6) {
+    if (values.password2?.length < 6) {
         errorMessages.password2 = 'Podane hasło jest za krótkie!';
     } 
 
-    if (values.password !== values.password2) {
+    if (values.password2?.length > 0){
+        
+        if (values.password !== values.password2) {
         errorMessages.password2 = 'Podane hasła muszą być takie same!';
-    } 
+        } 
+    }
+    
 
     return Object.keys(errorMessages).length > 0
     ? errorMessages

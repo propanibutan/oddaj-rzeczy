@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
 export default function HomeWhoWeHelpAll({ data, text }) {
