@@ -30,7 +30,6 @@ export default function Contact(){
           .catch(err => (console.log("treść:", err)))
         }
 
-            console.log("stan:", success)
     return (
         <section id="contact" className='contact'>
             <div className='contact-column-wraper'>
