@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -16,10 +16,13 @@ import Logout from './components/Logout';
 function App() {
   const [signedInUser, setSignedInUser] = useState(null);
 
-  onAuthStateChanged(auth, (currentUser) => {
-    setSignedInUser(currentUser);
-  });
+  useEffect(() => {
+    const user = onAuthStateChanged(auth, (currentUser) => {
+      setSignedInUser(currentUser);
+    });
 
+    return user
+  }, [])
 
   return (
     <Router> 

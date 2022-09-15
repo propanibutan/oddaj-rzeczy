@@ -2,9 +2,9 @@ import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
 export default function HomeWhoWeHelpAll({ data, text }) {
-  const [items, setItems] = useState(data);
   const [pageNumber, setPageNumber] = useState(0);
-
+  const items = data;
+  
   const itemsPerPage = 3;
   const pagesVisited = pageNumber * itemsPerPage;
 
