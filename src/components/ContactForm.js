@@ -2,7 +2,7 @@ import { useState } from 'react'
 import validate from './contactFormValidation';
 
 
-export default function ContactForm({ contact, submitLabel, onSubmit }) {
+export default function ContactForm({ contact, submitLabel, onSubmit, setSuccess }) {
     const [values, setValues] = useState(contact);
     const [errorMessages, setErrorMessages] = useState(null);
 
@@ -14,7 +14,7 @@ export default function ContactForm({ contact, submitLabel, onSubmit }) {
     //Only when validation is ok u can sent contact message
     function handleSubmit(event) {
         event.preventDefault();
-
+        setSuccess(null);
         const errorMessages = validate(values);
         setErrorMessages(errorMessages);
         if (errorMessages) return;
