@@ -17,7 +17,7 @@
             border: 0.046875rem solid $color-dark-gray;  
         }
         a:visited, a:active, a:hover {
-            color: inherit; 
+            color: $color-dark-gray; 
         }
 
         .navigation-text {
