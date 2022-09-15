@@ -1,5 +1,7 @@
 # Oddam w dobre ręce / Will give in good hands 
 
+**Project deploy:** https://oddaj-rzeczy-pbz.netlify.app/
+
 >This site is in polish language and it's one of projects for [CodersLab](https://github.com/CodersLab)'s course.
 
 -----------------------------------------------------------------
