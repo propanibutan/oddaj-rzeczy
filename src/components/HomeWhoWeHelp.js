@@ -43,7 +43,7 @@ export default function HomeWhoWeHelp(){
                 </div>
                 <div className='we-help_buttons'> 
                     <button id="button" type="button" onClick={(e) => handleClick(key[0])} className={`we-help_single_button ${isShown === "fundations" ? "choose-button" : ""}`}>Fundacjom</button>
-                    <button type="button" onClick={(e) => handleClick(key[1])} className="we-help_single_button">Organizacjom pozarządowym</button>
+                    <button id="button" type="button" onClick={(e) => handleClick(key[1])} className={`we-help_single_button ${isShown === "organizations" ? "choose-button" : ""}`}>Organizacjom pozarządowym</button>
                     <button type="button" onClick={(e) => handleClick(key[2])} className="we-help_single_button">Lokalnym zbiórkom</button>
                 </div>
                 {isShown === "fundations" && (<HomeWhoWeHelpAll data={data} text={text.fundText} />)}
