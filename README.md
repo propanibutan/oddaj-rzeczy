@@ -2,7 +2,7 @@
 
 **Project deploy:** https://oddaj-rzeczy-pbz.netlify.app/
 
-**Install** Download repo. In console: "npm install". Then "npm run build". Then "npm start". Voila!
+**Install:** 1.Download repo. 2.In console: "npm install". 3.Then "npm run build". 4.Then "npm start". Voila!
 
 
 >This site is in polish language and it's one of projects for [CodersLab](https://github.com/CodersLab)'s course.
