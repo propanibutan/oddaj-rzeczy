@@ -4,6 +4,7 @@
 
 **Install** Download repo. In console: "npm install". Then "npm run build". Then "npm start". Voila!
 
+
 >This site is in polish language and it's one of projects for [CodersLab](https://github.com/CodersLab)'s course.
 
 -----------------------------------------------------------------
