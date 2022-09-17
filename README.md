@@ -1,6 +1,7 @@
 # Oddam w dobre ręce / Will give in good hands 
 
 **Project deploy:** https://oddaj-rzeczy-pbz.netlify.app/
+**Install** Download repo. In console: "npm install". Then "npm run build". Then "npm start". Voila!
 
 >This site is in polish language and it's one of projects for [CodersLab](https://github.com/CodersLab)'s course.
 
@@ -23,6 +24,7 @@ Magda przeprowadziła wiele badań i obserwacji na podstawie, których przygotow
 -----------------------------------------------------------------
 
 ## Technologie i narzędzia / Technologies
-- **React** (Create React App, react-router-hash-link, react-router-dom, react-paginate)
-- **Sass** (normalize.css)
+- **React** (Create React App)
+- **Npm packages** (react-router-hash-link, react-router-dom, react-paginate, normalize.css)
+- **Sass**
 - **Firebase**
