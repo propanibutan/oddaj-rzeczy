@@ -27,6 +27,9 @@
                 &::placeholder {
                     opacity: 0.25;
                 }
+                &:focus::placeholder {
+                    color: transparent;
+                }
             }
         }
 
