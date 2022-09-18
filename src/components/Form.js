@@ -9,7 +9,6 @@ import FormStep2 from "./FormStep2";
 import FormStep3 from "./FormStep3";
 import FormStep4 from "./FormStep4";
 import FormSummary from "./FormSummary";
-import FormThankYou from "./FormThankYou";
 import { progressBar, formVariables } from '../data/formTexts';
 
 
@@ -18,8 +17,20 @@ export default function Form() {
   const [page, setPage] = useState(0);
   const [formValues, setFormValues] = useState({})
 
-
-  const handleClick = () => {}
+  const stepDisplay = () => {
+    if (page === 0) {
+      return <FormStep1 />;
+    } else if (page === 1) {
+      return <FormStep2 />;
+    } else if (page === 2) {
+      return <FormStep3 />;
+    } else if (page === 3) {
+      return <FormStep4 />;
+    } else {
+      return <FormSummary />
+    }
+  }
+  
 
   return (
     <div className="grid-container">
@@ -32,8 +43,8 @@ export default function Form() {
             <DecorationLine text1={'Oddaj rzeczy, których już nie chcesz'} text2={'POTRZEBUJĄCYM'}/>
             <span className="form-header_steps__title">Wystarczą 4 proste kroki:</span>
             <ul className="progress-bar">
-              {progressBar.map(({ number, text }) => (
-                <li key={number}>
+              {progressBar.map(({ number, text }, i) => (
+                <li key={number} className={`${i === page ? "progress-text_bold" : ""}`}>
                   <FormProgressBar number={number} text={text}/>
                 </li>
               ))}
@@ -50,27 +61,20 @@ export default function Form() {
         <div className='form-step'>
           <span className='form-step_progress'>Krok {progressBar[page].number}/4</span>
           <h2 className='form-step_title'>{formVariables[page].form_steps_title}</h2>
-        
-          <FormStep1 progress={progressBar[0].number} onClick={handleClick}/>
-          <FormStep2 />
-          <FormStep3 />
-          <FormStep4 />
-          <FormSummary />
-          <FormThankYou />
-
+          {stepDisplay()}
         </div>
         <div className="form-steps_buttons">
-          <button 
+          {page > 0 && <button 
           type="button" 
           className="form-step_button" 
-          // onClick={onClick}
+          onClick={() => {setPage((currPage) => currPage - 1);}}
           >
             Wstecz
-          </button>
+          </button>}
           <button 
           type="button" 
           className="form-step_button" 
-          // onClick={onClick}
+          onClick={() => {setPage((currPage) => currPage + 1);}}
           >
             Dalej
           </button>

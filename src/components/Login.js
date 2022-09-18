@@ -49,8 +49,7 @@ export default function Login() {
       <NavigationBar />
       <section className='sign-section'>
         <div className='sign-section_title__box'>
-          <span className='sign-section_title'>Zaloguj się</span>
-          <DecorationLine />
+          <DecorationLine text1={'Zaloguj się'}/>
         </div>
         <div>
           {generalError && ( <span>{generalError}</span> )}

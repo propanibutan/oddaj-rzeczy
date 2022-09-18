@@ -66,8 +66,7 @@ export default function Register() {
       <NavigationBar />
       <section className='sign-section'>
         <div className='sign-section_title__box'>
-          <span className='sign-section_title'>Załóż konto</span>
-          <DecorationLine />
+          <DecorationLine text1={'Załóż konto'}/>
         </div>
         <div>
         {generalError && ( <span>{generalError}</span> )}
