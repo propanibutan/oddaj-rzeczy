@@ -15,13 +15,35 @@ import { progressBar, formVariables } from '../data/formTexts';
 //some of style for this are in home-header.scss
 export default function Form() {
   const [page, setPage] = useState(0);
-  const [formValues, setFormValues] = useState({})
+  const [formValues, setFormValues] = useState({
+    things: '',
+    bags_count: '',
+    localization: {
+      place:'',
+      who_help: '',
+      organization: ''
+    },
+    pickup_adress: {
+      street: '',
+      city:'',
+      postal: '',
+      phone: '',
+    },
+    pickup_date: {
+      date: '',
+      hour: '',
+      notes:''
+    }
+  });
+
+  console.log("form:",formValues)
+  //tu się coś za dużo razy renderuje... i mi zabiera pamieć... jak to ogarnac? useEffect?
 
   const stepDisplay = () => {
     if (page === 0) {
-      return <FormStep1 />;
+      return <FormStep1 things={formValues.things} setFormValues={setFormValues} />;
     } else if (page === 1) {
-      return <FormStep2 />;
+      return <FormStep2 bags_count={formValues.bags_count} setFormValues={setFormValues} />;
     } else if (page === 2) {
       return <FormStep3 />;
     } else if (page === 3) {

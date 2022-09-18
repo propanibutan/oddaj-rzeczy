@@ -1,53 +1,45 @@
+//styles for this are in form-steps.scss
+export default function FormStep1({things, setFormValues}) {
+    const thingsToGive = [
+        {
+            id: 'reuse-clothes',
+            label: 'ubrania, które nadają się do ponownego użycia'
+        },
+        {
+            id: 'trash-clothes',
+            label: 'ubrania, do wyrzucenia'
+        },
+        {
+            id: 'toys',
+            label: 'zabawki'
+        },
+        {
+            id: 'books',
+            label: 'książki'
+        },
+        {
+            id: 'others',
+            label: 'Inne'
+        }
+    ]
 
-
-export default function FormStep1({ progress, onClick }) {
   return (
-    <div className='form-step'>
-        <label for='reuse-clothes'>
-            <input 
-            type='radio' 
-            id='reuse-clothes' 
-            name='step-1' 
-            value='reuse-clothes'
+    <div>
+        {thingsToGive.map(({ id, label }) => (
+           <label key={id} className="form-step-one_label">
+            <input
+            id={id} 
+            className="form-step-one_input"
+            name='things'
+            type='radio'
+            value={id}
+            checked={things === id}
+            onChange={(e) => setFormValues({things: e.target.value})}
             />
-            ubrania, które nadają się do ponownego użycia
-        </label>
-        <label for='trash-clothes'>
-            <input 
-            type='radio' 
-            id='trash-clothes' 
-            name='step-1' 
-            value='trash-clothes'
-            />
-            ubrania, do wyrzucenia
-        </label>
-        <label for='toys'>
-            <input 
-            type='radio' 
-            id='toys' 
-            name='step-1' 
-            value='toys'
-            /> 
-            zabawki
-        </label>
-        <label for='books'>
-            <input 
-            type='radio' 
-            id='books' 
-            name='step-1' 
-            value='books'
-            />
-            książki
-        </label>
-        <label for='others'>
-            <input 
-            type='radio' 
-            id='others' 
-            name='step-1' 
-            value='others'
-            />
-            Inne
+            {label}
         </label> 
+        ))}
+        
     </div>
   )
 }

@@ -1,24 +1,24 @@
 @import '../settings/colors';
 
-    // label {
-    //     display: flex;
-    //     align-items: center;
-    //     font-size: 24px;
-    //     font-weight: lighter;
-    //     line-height: 32px;
-    //     color: black;
-    //     margin-bottom: 42px;
-    // }
+    .form-step-one_label {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: lighter;
+        line-height: 32px;
+        color: black;
+        margin-bottom: 42px;
+    }
 
-    // input {
-    //     width: 40px;
-    //     height: 40px;
-    //     border: 0.046875rem solid $color-dark-gray;
-    //     appearance: none;
-    //     cursor: pointer;
-    //     margin-right: 30px;
+    .form-step-one_input {
+        width: 40px;
+        height: 40px;
+        border: 0.046875rem solid $color-dark-gray;
+        appearance: none;
+        cursor: pointer;
+        margin-right: 30px;
 
-    //     &:checked {
-    //         background-color: $color-yellow;
-    //     }
-    // }
+        &:checked {
+            background-color: $color-yellow;
+        }
+    }
