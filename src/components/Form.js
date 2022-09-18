@@ -41,9 +41,9 @@ export default function Form() {
 
   const stepDisplay = () => {
     if (page === 0) {
-      return <FormStep1 things={formValues.things} setFormValues={setFormValues} />;
+      return <FormStep1 formValues={formValues} setFormValues={setFormValues} />;
     } else if (page === 1) {
-      return <FormStep2 bags_count={formValues.bags_count} setFormValues={setFormValues} />;
+      return <FormStep2 formValues={formValues} setFormValues={setFormValues} />;
     } else if (page === 2) {
       return <FormStep3 />;
     } else if (page === 3) {
