@@ -1,12 +1,21 @@
+import { useState } from "react";
 import DecorationLine from "../utils/DecorationLine";
 import NavigationBar from "../utils/NavigationBar";
 import SignedBar from "../utils/SignedBar";
 import Contact from "./Contact";
 import FormProgressBar from "../utils/FormProgressBar";
 import FormStep1 from "./FormStep1";
+import FormStep2 from "./FormStep2";
+import FormStep3 from "./FormStep3";
+import FormStep4 from "./FormStep4";
+import FormSummary from "./FormSummary";
+import FormThankYou from "./FormThankYou";
+
 
 //some of style for this are in home-header.scss
 export default function Form() {
+const [formValues, setFormValues] = useState()
+
 const progressBar = [
   { 
     number: '1',
@@ -25,6 +34,8 @@ const progressBar = [
     text: 'Zamów kuriera'
   },
 ]
+
+const handleClick = () => {}
 
   return (
     <div className="grid-container">
@@ -53,7 +64,12 @@ const progressBar = [
       </div>
 
       <form className="row form-steps-view">
-        <FormStep1 />
+        <FormStep1 progress={progressBar[0].number} onClick={handleClick}/>
+        <FormStep2 />
+        <FormStep3 />
+        <FormStep4 />
+        <FormSummary />
+        <FormThankYou />
       </form>
 
       <Contact />

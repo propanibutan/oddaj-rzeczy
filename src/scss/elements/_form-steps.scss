@@ -1,0 +1,60 @@
+@import '../settings/colors';
+
+.form-step {
+    width: 950px;
+    padding: 36px 8.85rem 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    .form-step_progress {
+        font-size: 24px;
+        font-weight: lighter;
+        line-height: 27px;
+    }
+
+    .form-step_title {
+        color: black;
+        font-size: 36px;
+        font-weight: bolder;
+        line-height: 45px;
+        margin-top: 70px;
+        margin-bottom: 40px;
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: lighter;
+        line-height: 32px;
+        color: black;
+        margin-bottom: 42px;
+    }
+
+    input {
+        width: 40px;
+        height: 40px;
+        border: 0.046875rem solid $color-dark-gray;
+        appearance: none;
+        cursor: pointer;
+        margin-right: 30px;
+
+        &:checked {
+            background-color: $color-yellow;
+        }
+    }
+
+    .form-step_button {
+        width: 180px;
+        height: 79px;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        color: #000000;
+        font-weight: lighter;
+        border: 0.046875rem solid $color-dark-gray;
+        background: transparent;
+        cursor: pointer;
+        ;
+    }
+}
