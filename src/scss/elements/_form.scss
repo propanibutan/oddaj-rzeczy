@@ -1,0 +1,34 @@
+.form-header{
+    height: 830px;
+    width: 100%;
+    justify-content: space-between;
+    // background: linear-gradient(0deg, rgba(227,226,221,1) 0%, rgba(227,226,221,0.16850490196078427) 0%, rgba(255,255,255,1) 100%) no-repeat 17.75rem;
+}
+    .form-header_image {
+        background: transparent url('/assets/Form-Hero-Image.jpg') no-repeat;
+        margin-left: -8.875rem;
+        margin-top: -1.5rem;
+    }
+
+    .form-header_box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 90px;
+        margin-left: -280px;
+
+        .form-header_steps__title{
+            font-weight: lighter;
+            font-size: 40px;
+            line-height: 55px;
+        }
+
+        .progress-bar{
+            display: flex;
+            margin-top: 40px;
+        }
+    }
+
+
+    
+

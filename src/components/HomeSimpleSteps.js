@@ -37,8 +37,7 @@ export default function HomeSimpleSteps(){
     return (
         <section id="simple_steps" className='simple-steps'>
             <div className='simple-steps_title'>
-                <span>Wystarczą 4 proste kroki</span>
-                <DecorationLine />
+                <DecorationLine text1={'Wystarczą 4 proste kroki'}/>
             </div>
             <ul className='simple-steps_columns'>
             {simpleStepsColumns.map (({ icon, icon_alt, title, description }, i) => (

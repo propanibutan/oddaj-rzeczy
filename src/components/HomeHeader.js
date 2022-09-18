@@ -23,11 +23,7 @@ export default function HomeHeader(){
                     {signedIn ? <SignedBar /> : <SignBar />}
                     <NavigationBar />
                     <header className='header-box'>
-                        <div className='header-text'>
-                            <span>Zacznij pomagać!</span>
-                            <span>Oddaj niechciane rzeczy w zaufane ręce</span>
-                        </div>
-                        <DecorationLine />
+                        <DecorationLine text1={'Zacznij pomagać!'} text2={'Oddaj niechciane rzeczy w zaufane ręce'} />
                         <div  className='header-box_buttons'>
                             <CallToActionButton contents="ODDAJ RZECZY" />
                             <CallToActionButton contents="ZORGANIZUJ ZBIÓRKĘ"/>

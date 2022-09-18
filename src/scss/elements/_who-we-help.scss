@@ -10,16 +10,7 @@
     height: 53.875rem;
 
     .we-help_title {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        font-size: 2.375rem;
-        letter-spacing: -0.0475rem;
         margin-bottom: 3.125rem;
-
-        span {
-            margin-bottom: 1.5625rem;
-        }
     }
 
     .we-help_buttons {
@@ -34,7 +25,7 @@
             font-size: 1.5rem;
             color: $color-dark-gray;
             cursor: pointer;
-
+            
             &:hover {
                 border: 0.046875rem solid $color-dark-gray;  
             }

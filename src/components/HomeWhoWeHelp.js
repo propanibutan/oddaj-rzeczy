@@ -38,8 +38,7 @@ export default function HomeWhoWeHelp(){
         <section id="fundations">
             <div className='who-help_container'>
                 <div className='we-help_title'>
-                    <span>Komu pomagamy?</span>
-                    <DecorationLine /> 
+                    <DecorationLine text1={'Komu pomagamy?'}/> 
                 </div>
                 <div className='we-help_buttons'> 
                     <button id="button" type="button" onClick={(e) => handleClick(key[0])} className={`we-help_single_button ${isShown === "fundations" ? "choose-button" : ""}`}>Fundacjom</button>

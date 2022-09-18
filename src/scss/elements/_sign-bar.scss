@@ -24,8 +24,9 @@
         color: $color-light-gray;
         text-decoration: none;
         border: 0.046875rem solid $color-pure-white;
+        
         &:hover {
-        border: 0.046875rem solid $color-yellow;  
+            border: 0.046875rem solid $color-yellow;  
         }
     }
 }

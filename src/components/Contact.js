@@ -33,8 +33,7 @@ export default function Contact(){
     return (
         <section id="contact" className='contact'>
             <div className='contact-column-wraper'>
-                <span className='contact-form_title'>Skontaktuj się z nami</span>
-                <DecorationLine />
+                <DecorationLine text1={'Skontaktuj się z nami'}/>
                 <div className='contact-form_message'>
                     {success === true && <span className="success-message">Wiadomość została wysłana! Wkrótce się skontaktujemy.</span>}
                     {success === false && <span className="fatal-message">Coś poszło nie tak. Sprawdź czy poprawnie wypełniłeś formularz.</span>}  
