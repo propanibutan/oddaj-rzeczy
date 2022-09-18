@@ -2,40 +2,24 @@ import { useState } from "react";
 import DecorationLine from "../utils/DecorationLine";
 import NavigationBar from "../utils/NavigationBar";
 import SignedBar from "../utils/SignedBar";
-import Contact from "./Contact";
 import FormProgressBar from "../utils/FormProgressBar";
+import Contact from "./Contact";
 import FormStep1 from "./FormStep1";
 import FormStep2 from "./FormStep2";
 import FormStep3 from "./FormStep3";
 import FormStep4 from "./FormStep4";
 import FormSummary from "./FormSummary";
 import FormThankYou from "./FormThankYou";
+import { progressBar, formVariables } from '../data/formTexts';
 
 
 //some of style for this are in home-header.scss
 export default function Form() {
-const [formValues, setFormValues] = useState()
+  const [page, setPage] = useState(0);
+  const [formValues, setFormValues] = useState({})
 
-const progressBar = [
-  { 
-    number: '1',
-    text: 'Wybierz rzeczy'
-  },
-  { 
-    number: '2',
-    text: 'Spakuj je w worki'
-  },
-  { 
-    number: '3',
-    text: 'Wybierz fundację'
-  },
-  { 
-    number: '4',
-    text: 'Zamów kuriera'
-  },
-]
 
-const handleClick = () => {}
+  const handleClick = () => {}
 
   return (
     <div className="grid-container">
@@ -57,23 +41,43 @@ const handleClick = () => {}
           </div>
         </div>
       </div>
-
       <div className="row form-info-bar">
         <span className="form-info-bar_warning">Ważne!</span>
-        <p className="form-info-bar_description">Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.</p>
+        <p className="form-info-bar_description">{formVariables[page].info_bar}</p>
       </div>
 
       <form className="row form-steps-view">
-        <FormStep1 progress={progressBar[0].number} onClick={handleClick}/>
-        <FormStep2 />
-        <FormStep3 />
-        <FormStep4 />
-        <FormSummary />
-        <FormThankYou />
+        <div className='form-step'>
+          <span className='form-step_progress'>Krok {progressBar[page].number}/4</span>
+          <h2 className='form-step_title'>{formVariables[page].form_steps_title}</h2>
+        
+          <FormStep1 progress={progressBar[0].number} onClick={handleClick}/>
+          <FormStep2 />
+          <FormStep3 />
+          <FormStep4 />
+          <FormSummary />
+          <FormThankYou />
+
+        </div>
+        <div className="form-steps_buttons">
+          <button 
+          type="button" 
+          className="form-step_button" 
+          // onClick={onClick}
+          >
+            Wstecz
+          </button>
+          <button 
+          type="button" 
+          className="form-step_button" 
+          // onClick={onClick}
+          >
+            Dalej
+          </button>
+        </div>
       </form>
 
       <Contact />
-
     </div>
   )
 }

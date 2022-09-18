@@ -59,8 +59,48 @@
 
 .form-steps-view {
     height: 883px;
+    padding: 36px 8.85rem 50px;
     margin: 0 -8.85rem;
     background: transparent url('/assets/Background-Form.jpg') 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .form-step {
+        width: 950px;
+        
+        .form-step_progress {
+            font-size: 24px;
+            font-weight: lighter;
+            line-height: 27px;
+        }
+    
+        .form-step_title {
+            color: black;
+            font-size: 36px;
+            font-weight: bolder;
+            line-height: 45px;
+            margin-top: 70px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .form-steps_buttons{
+        display: flex;
+        gap: 50px;
+
+        .form-step_button {
+            width: 180px;
+            height: 79px;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            color: #000000;
+            font-weight: lighter;
+            border: 0.046875rem solid $color-dark-gray;
+            background: transparent;
+            cursor: pointer;
+        }
+    }
 }
 
     
