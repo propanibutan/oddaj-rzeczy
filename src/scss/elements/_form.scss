@@ -1,9 +1,10 @@
+@import '../settings/colors';
+
 .form-header{
     height: 830px;
     width: 100%;
     justify-content: space-between;
-    // background: linear-gradient(0deg, rgba(227,226,221,1) 0%, rgba(227,226,221,0.16850490196078427) 0%, rgba(255,255,255,1) 100%) no-repeat 17.75rem;
-}
+    // background: linear-gradient(0deg, rgba(227,226,221,1) 0%, rgba(227,226,221,0.16850490196078427) 0%, rgba(255,255,255,1) 100%) ;
     .form-header_image {
         background: transparent url('/assets/Form-Hero-Image.jpg') no-repeat;
         margin-left: -8.875rem;
@@ -21,14 +22,46 @@
             font-weight: lighter;
             font-size: 40px;
             line-height: 55px;
+            margin: 19.2px 0;
         }
 
         .progress-bar{
             display: flex;
-            margin-top: 40px;
+            margin-top: 30px;
+            list-style: none;
         }
     }
+}
 
+.form-info-bar {
+    height: 179px;
+    margin: 0 -8.85rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: $color-yellow;
+    padding: 50px 8.85rem;
+
+    
+    .form-info-bar_warning {
+        color: black;
+        font-size: 36px;
+        line-height: 49px;
+        font-weight: bolder;
+    }
+
+    .form-info-bar_description {
+        font-size: 22px;
+        line-height: 30px;
+        margin: 0;
+    }
+}
+
+.form-steps-view {
+    height: 883px;
+    margin: 0 -8.85rem;
+    background: transparent url('/assets/Background-Form.jpg') 0% 0% no-repeat padding-box;
+}
 
     
 
