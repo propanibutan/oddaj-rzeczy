@@ -37,8 +37,10 @@ export default function Login() {
     signInWithEmailAndPassword(auth, values.email, values.password)
     .then((userCredential) => {
         const user = userCredential.user;
-        console.log("user:", user)
-      navigate('/')
+        localStorage.setItem('email', user.email);
+        localStorage.setItem('id', user.uid);
+        navigate('/');
+        window.location.reload(false);
     })
     .catch(error => {setGeneralError("Podano niewłaściwe dane.")})
   }
@@ -52,7 +54,7 @@ export default function Login() {
           <DecorationLine text1={'Zaloguj się'}/>
         </div>
         <div>
-          {generalError && ( <span>{generalError}</span> )}
+          {generalError && ( <span className='general-error'>{generalError}</span> )}
           <form className='sign-section_form' onSubmit={handleSubmit}>
             <div className='sign-section_inputs'>
               <SignInput

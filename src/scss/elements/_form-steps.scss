@@ -1,24 +1,46 @@
 @import '../settings/colors';
 
-    .form-step-one_label {
-        display: flex;
-        align-items: center;
-        font-size: 24px;
-        font-weight: lighter;
-        line-height: 32px;
-        color: black;
-        margin-bottom: 42px;
+.form-step_label {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: lighter;
+    line-height: 32px;
+    color: black;
+    margin-bottom: 42px;
+    gap: 26px;
+}
+
+.form-step-one_input {
+    width: 40px;
+    height: 40px;
+    border: 0.046875rem solid $color-dark-gray;
+    appearance: none;
+    cursor: pointer;
+    margin-right: 4px;
+
+    &:checked {
+        background-color: $color-yellow;
+    }
+}
+
+.form-step_select {
+    width: 300px;
+    height: 49px;
+    padding: 8px;
+    font-weight: lighter;
+    line-height: 33px;
+    font-size: 24px;
+    appearance: none;  
+    background: transparent url('/assets/Icon-Arrow-Down.svg') no-repeat right;
+    border: 0.046875rem solid $color-dark-gray;
+    cursor: pointer;
+    
+      &:focus, &:active {
+        background: url('/assets/Icon-Arrow-Up.svg') no-repeat right;
+        outline: 0;
     }
 
-    .form-step-one_input {
-        width: 40px;
-        height: 40px;
-        border: 0.046875rem solid $color-dark-gray;
-        appearance: none;
-        cursor: pointer;
-        margin-right: 30px;
 
-        &:checked {
-            background-color: $color-yellow;
-        }
-    }
+}
+

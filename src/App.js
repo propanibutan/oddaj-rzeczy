@@ -1,12 +1,9 @@
-import { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate
 } from 'react-router-dom';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from './firebase-config';
 import Home from './components/Home';
 import Form from './components/Form';
 import Login from './components/Login';
@@ -14,15 +11,8 @@ import Register from './components/Register';
 import Logout from './components/Logout';
 
 function App() {
-  const [signedInUser, setSignedInUser] = useState(null);
-
-  useEffect(() => {
-    const user = onAuthStateChanged(auth, (currentUser) => {
-      setSignedInUser(currentUser);
-    });
-
-    return user
-  }, [])
+  const userLogged = localStorage.getItem('email');
+  const userId = localStorage.getItem('id');
 
   return (
     <Router> 
@@ -31,8 +21,8 @@ function App() {
       <Route 
         path='/oddaj-rzeczy' 
         element={
-          signedInUser 
-          ? <Form signedInUser={signedInUser} />
+          userLogged !== null
+          ? <Form userId={userId}/>
           : <Navigate replace to={"/logowanie"} />
         } 
       />

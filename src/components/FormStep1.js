@@ -1,5 +1,5 @@
 //styles for this are in form-steps.scss
-export default function FormStep1({formValues, setFormValues}) {
+export default function FormStep1({formValues, handleChange}) {
     const thingsToGive = [
         {
             id: 'reuse-clothes',
@@ -24,9 +24,9 @@ export default function FormStep1({formValues, setFormValues}) {
     ]
 
   return (
-    <div>
-        {thingsToGive.map(({ id, label }) => (
-           <label key={id} className="form-step-one_label">
+    <>
+        {thingsToGive.map(({ id, label }, i) => (
+           <label key={i} className="form-step_label">
             <input
             id={id} 
             className="form-step-one_input"
@@ -34,12 +34,12 @@ export default function FormStep1({formValues, setFormValues}) {
             type='radio'
             value={id}
             checked={formValues.things === id}
-            onChange={(e) => setFormValues({...formValues, things: e.target.value})}
+            onChange={handleChange("things")}
             />
             {label}
         </label> 
         ))}
         
-    </div>
+    </>
   )
 }

@@ -18,41 +18,40 @@ export default function Form() {
   const [formValues, setFormValues] = useState({
     things: '',
     bags_count: '',
-    localization: {
-      place:'',
-      who_help: '',
-      organization: ''
-    },
-    pickup_adress: {
-      street: '',
-      city:'',
-      postal: '',
-      phone: '',
-    },
-    pickup_date: {
-      date: '',
-      hour: '',
-      notes:''
-    }
+    place:'',
+    help_groups: '',
+    organization: '',
+    street: '',
+    city:'',
+    postal: '',
+    phone: '',
+    date: '',
+    hour: '',
+    notes:''
   });
 
   console.log("form:",formValues)
-  //tu się coś za dużo razy renderuje... i mi zabiera pamieć... jak to ogarnac? useEffect?
 
   const stepDisplay = () => {
     if (page === 0) {
-      return <FormStep1 formValues={formValues} setFormValues={setFormValues} />;
+      return <FormStep1 formValues={formValues} handleChange={handleChange} />;
     } else if (page === 1) {
-      return <FormStep2 formValues={formValues} setFormValues={setFormValues} />;
+      return <FormStep2 formValues={formValues}  handleChange={handleChange}/>;
     } else if (page === 2) {
-      return <FormStep3 />;
+      return <FormStep3 formValues={formValues}  />;
     } else if (page === 3) {
-      return <FormStep4 />;
-    } else {
-      return <FormSummary />
+      return <FormStep4 formValues={formValues} />;
+    } else if (page === 4){
+      return <FormSummary formValues={formValues} />
     }
   }
   
+  const handleChange = (input) => (e) => {
+    setFormValues({
+      ...formValues,
+      [input]: e.target.value,
+    });
+  };
 
   return (
     <div className="grid-container">

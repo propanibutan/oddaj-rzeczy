@@ -20,7 +20,7 @@ export default function HomeHeader(){
             <div className='row header'>
                 <div className='col-6 header-image'/>
                 <div className='col-6 header-column'>
-                    {signedIn ? <SignedBar /> : <SignBar />}
+                    {signedIn ? <SignedBar/> : <SignBar />}
                     <NavigationBar />
                     <header className='header-box'>
                         <DecorationLine text1={'Zacznij pomagać!'} text2={'Oddaj niechciane rzeczy w zaufane ręce'} />

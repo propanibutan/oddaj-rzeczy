@@ -6,6 +6,7 @@
     align-items: center;
     margin-top: 123px;
     margin-bottom: 202px;
+    position: relative;
     
     .sign-section_title__box{
         display: flex;
@@ -66,4 +67,19 @@
             }
         }
     }
+}
+
+.general-error {
+    margin: 0 auto;
+    color: red;
+    font-weight: bolder;
+    font-size: 18px;
+    line-height: 1.625rem;
+    text-align: center;
+    position: absolute;
+    top: 150px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
 }
