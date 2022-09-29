@@ -1,5 +1,3 @@
-// import { useState, useEffect } from "react";
-
 //styles for this are in form-steps.scss
 export default function FormStep2({formValues, handleChange}) {
   const bags = ['1', '2', '3', '4', '5']

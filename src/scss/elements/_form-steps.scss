@@ -115,5 +115,21 @@
     font-weight: bold;
     font-size: 18px;
     margin-top: 50px;
-    
+}
+
+.form-step_pickup {
+    display: flex;
+    gap: 152px;
+    max-width: 100%;
+
+    .form-step_pickup_column {
+        display: flex;
+        flex-direction: column;
+        width: 392px;
+
+        h4 {
+            line-height: 45px;
+        }
+    }
+
 }

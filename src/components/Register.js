@@ -15,7 +15,6 @@ export default function Register() {
   const [values, setValues] = useState({ email:'', password:'', password2:'' });
   const [errorMessages, setErrorMessages] = useState(null);
   const [generalError, setGeneralError] = useState(null);
-
   const navigate = useNavigate();
 
   //move value to state and put in right key

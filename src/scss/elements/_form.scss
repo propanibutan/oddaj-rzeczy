@@ -45,7 +45,7 @@
     flex-direction: column;
     justify-content: center;
     background: $color-yellow;
-    padding: 50px 8.85rem;
+    padding: 30px 8.85rem;
     
     .form-info-bar_warning {
         color: black;
@@ -58,6 +58,7 @@
         font-size: 22px;
         line-height: 30px;
         margin: 0;
+        max-width: 1226px;
     }
 }
 
