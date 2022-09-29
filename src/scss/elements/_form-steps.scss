@@ -50,44 +50,49 @@
     margin-top: 50px;
     margin-bottom: 20px;
 }
+
 .form-step_checkbox {
     width: 634px;
     display: flex;
     flex-flow: row wrap;
     gap: 24px;
+    
 
     .form-step_box {
         height: 55px;
-        margin:0;
-        border: 0.046875rem solid $color-dark-gray;
+        margin: 0;
         white-space: nowrap;
         padding: 11px 20px;
         cursor: pointer;
-        text-align: center;
-
-        background-color: transparent;
-        display: block;
-  position: relative;
-  user-select: none;
-
+        position: relative;
+        align-items: center;
+        font-size: 24px;
+        font-weight: lighter;
+        line-height: 32px;
+        color: black;
+        z-index:1;
+     
         input {
-            position: absolute;
-            opacity: 0;
+            width: 100%;
+            height: 100%;
+            border: 0.046875rem solid $color-dark-gray;
+            appearance: none;
             cursor: pointer;
-            height: 0;
-            width: 0;
-        //     &:checked ~ .form-step_box{
-        //     background-color: $color-yellow;
-        // }
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:checked {
+                background-color: $color-yellow;
+            }   
+
+            &:hover  {
+            background-color: $color-yellow;
+            }
         }
-
-         
     }
-}
-
-.form-step_box input:checked + label {
-    background-color: $color-yellow;
-}
+} 
 
 .form-step_text__input {
     width: 570px;
@@ -96,11 +101,19 @@
     background-color: transparent;
     font-weight: lighter;
     font-size: 24px;
-    cursor: pointer;
 
     &:focus {
-        border: 1px solid red;
-        border-radius: none;
+        outline: none;
     }
 }
-
+.form-step_3_container {
+    display: flex;
+    flex-direction: column;
+}
+.miniError {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 50px;
+    
+}

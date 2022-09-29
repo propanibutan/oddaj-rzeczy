@@ -11,7 +11,6 @@ import FormStep4 from "./FormStep4";
 import FormSummary from "./FormSummary";
 import { progressBar, formVariables } from '../data/formTexts';
 
-
 //some of style for this are in home-header.scss
 export default function Form() {
   const [page, setPage] = useState(0);
@@ -23,12 +22,13 @@ export default function Form() {
     localizationSpecific: '',
     street: '',
     city:'',
-    postal: '',
+    postCode: '',
     phone: '',
     date: '',
-    hour: '',
-    notes:''
+    time: '',
+    note:''
   });
+  const [miniError, setMiniError] = useState(false);
 
   console.log("form:",formValues)
 
@@ -38,7 +38,12 @@ export default function Form() {
     } else if (page === 1) {
       return <FormStep2 formValues={formValues} handleChange={handleChange} />;
     } else if (page === 2) {
-      return <FormStep3 formValues={formValues} handleChange={handleChange} handleCheckbox={handleCheckbox}/>;
+      return <FormStep3 
+      formValues={formValues} 
+      handleChange={handleChange} 
+      handleCheckbox={handleCheckbox} 
+      miniError={miniError}
+      />;
     } else if (page === 3) {
       return <FormStep4 formValues={formValues} handleChange={handleChange} />;
     } else if (page === 4){
@@ -54,11 +59,32 @@ export default function Form() {
   };
 
   const handleCheckbox = (e) => {
-  const array = formValues.helpGroups.concat(e.target.value)
-    setFormValues({
-      ...formValues,
-     helpGroups: array,
-    });
+    if(e.target.checked){
+      const array = formValues.helpGroups.concat(e.target.value)
+      setFormValues({
+        ...formValues,
+      helpGroups: array,
+      });
+      setMiniError(false);
+    } else {
+      const filterArray = formValues.helpGroups.filter((el) => (e.target.value !== el))
+      setFormValues({
+        ...formValues,
+        helpGroups: filterArray
+      })
+    }
+  }
+
+  const handleNextPage = () => {
+    if (page !== 2) {
+      setPage((currPage) => currPage + 1)
+    } else {
+      if (formValues.helpGroups.length > 0) {
+        setPage((currPage) => currPage + 1);
+      } else {
+        setMiniError(true);
+      }
+    }
   }
 
   return (
@@ -102,8 +128,8 @@ export default function Form() {
           </button>}
           <button 
           type="button" 
-          className="form-step_button" 
-          onClick={() => {setPage((currPage) => currPage + 1);}}
+          className="form-step_button"
+          onClick={handleNextPage}
           >
             Dalej
           </button>
