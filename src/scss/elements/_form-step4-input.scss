@@ -1,1 +1,42 @@
 @import '../settings/colors';
+
+.form-step4_input_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: lighter;
+    font-size: 24px;
+    line-height: 26px;
+    color: black;
+
+    .form-step4_input {
+        width: 256px;
+        height: 40px;
+        border: 0.046875rem solid $color-dark-gray;
+        background-color: transparent;
+        font-weight: lighter;
+        font-size: 24px;
+    
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .form-step4_texarea {
+        width: 256px;
+        height: 120px;
+        border: 0.046875rem solid $color-dark-gray;
+        background-color: transparent;
+        font-weight: lighter;
+        font-size: 24px;
+    
+        &:focus {
+            outline: none;
+        }
+    }
+} 
+
+.textarea {
+    align-items: flex-start;
+    line-height: 32px;
+}

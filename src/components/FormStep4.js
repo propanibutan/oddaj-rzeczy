@@ -85,11 +85,11 @@ export default function FormStep4({ formValues, handleChange, errorMessages }) {
           onChange={onChange}
         />
         ))}
-        <label className=''>
-          Uwagi dla kuriera
+        <label className='form-step4_input_container textarea'>
+          Uwagi <br/>dla kuriera
           <textarea
             id="note"
-            className={` ${errorMessages?.note ? "error-border" : ""}`}
+            className={`form-step4_texarea ${errorMessages?.note ? "error-border" : ""}`}
             name="note" 
             value={formValues?.note}
             onChange={handleChange("note")}

@@ -121,14 +121,17 @@
     display: flex;
     gap: 152px;
     max-width: 100%;
+    margin:0;
 
     .form-step_pickup_column {
         display: flex;
         flex-direction: column;
         width: 392px;
+        gap: 20px;
 
         h4 {
             line-height: 45px;
+            margin: 10px 0;
         }
     }
 

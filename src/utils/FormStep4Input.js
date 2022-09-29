@@ -14,11 +14,11 @@ export default function FormStep4Input( {
   }
 
   return (
-    <label className='form-step4_input'>
+    <label className='form-step4_input_container'>
         {label}
         <input 
             id={name}
-            className={` ${errorMessage ? "error-border" : ""}`}
+            className={`form-step4_input ${errorMessage ? "error-border" : ""}`}
             name={name}
             type={type} 
             value={value}
