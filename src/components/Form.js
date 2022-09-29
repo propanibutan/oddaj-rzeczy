@@ -16,11 +16,11 @@ import { progressBar, formVariables } from '../data/formTexts';
 export default function Form() {
   const [page, setPage] = useState(0);
   const [formValues, setFormValues] = useState({
-    things: '',
-    bags_count: '',
-    place:'',
-    help_groups: '',
-    organization: '',
+    type: '',
+    bags: '',
+    localization:'',
+    helpGroups: [],
+    localizationSpecific: '',
     street: '',
     city:'',
     postal: '',
@@ -36,11 +36,11 @@ export default function Form() {
     if (page === 0) {
       return <FormStep1 formValues={formValues} handleChange={handleChange} />;
     } else if (page === 1) {
-      return <FormStep2 formValues={formValues}  handleChange={handleChange}/>;
+      return <FormStep2 formValues={formValues} handleChange={handleChange} />;
     } else if (page === 2) {
-      return <FormStep3 formValues={formValues}  />;
+      return <FormStep3 formValues={formValues} handleChange={handleChange} handleCheckbox={handleCheckbox}/>;
     } else if (page === 3) {
-      return <FormStep4 formValues={formValues} />;
+      return <FormStep4 formValues={formValues} handleChange={handleChange} />;
     } else if (page === 4){
       return <FormSummary formValues={formValues} />
     }
@@ -52,6 +52,14 @@ export default function Form() {
       [input]: e.target.value,
     });
   };
+
+  const handleCheckbox = (e) => {
+  const array = formValues.helpGroups.concat(e.target.value)
+    setFormValues({
+      ...formValues,
+     helpGroups: array,
+    });
+  }
 
   return (
     <div className="grid-container">

@@ -30,11 +30,11 @@ export default function FormStep1({formValues, handleChange}) {
             <input
             id={id} 
             className="form-step-one_input"
-            name='things'
+            name='type'
             type='radio'
             value={id}
-            checked={formValues.things === id}
-            onChange={handleChange("things")}
+            checked={formValues.type === id}
+            onChange={handleChange("type")}
             />
             {label}
         </label> 

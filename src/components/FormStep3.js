@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-export default function FormStep3({formValues, setFormValues}) {
+export default function FormStep3({formValues, handleChange, handleCheckbox}) {
   const city = ['Poznań', 'Warszawa', 'Kraków', 'Wrocław', 'Katowice']
   const helpGroups = [
     {
@@ -25,53 +25,61 @@ export default function FormStep3({formValues, setFormValues}) {
     }
   ]
 
-  const [help, setHelp] = useState("")
-  console.log('help', help)
+  // const [help, setHelp] = useState("")
+  // console.log('help', help)
 
-  useEffect(() => {
+  // useEffect(() => {
     
   
-    return setFormValues({...formValues, help_groups: help});
-  }, [help])
+  //   return setFormValues({...formValues, help_groups: help});
+  // }, [help])
   
 
-  const handleHelpGroups = (e) => {
-    const element = e.target.value
-    const stable = help
-    setHelp(...stable, element)
-  }
+  // const handleHelpGroups = (e) => {
+  //   const element = e.target.value
+  //   const stable = help
+  //   setHelp(...stable, element)
+  // }
 
   return (
     <div>
       <select 
       id="localization" 
       name="localization" 
-      className="form-step_select"  
-      onChange={(e) => setFormValues({...formValues, place: e.target.value})}
+      className="form-step_select" 
+      value={formValues?.localization}
+      onChange={handleChange("localization")}
       > 
-        <option value="">-wybierz-</option>
-        {city.map((city, i) => (
-        <option key={i} value={city} defaultValue={formValues?.place}>{city}</option>
+        <option value="">— wybierz —</option>
+        {city.map((el, i) => (
+        <option key={i} value={el}>{el}</option>
         ))}
       </select>
-      <h4>Komu chcesz pomóc?</h4>
-      <div >
+      <h4 className='form-step_h4'>Komu chcesz pomóc?</h4>
+      <div className='form-step_checkbox'>
         {helpGroups.map(({ id, label }, i) => (
-        <label key={i} className="form-step_label">
+        <label key={i} className="form-step_label form-step_box">
           <input
           id={id} 
-          // className=""
-          name='help_groups'
+          name='helpGroups'
           type='checkbox'
           value={id}
-          // checked={id === help.element}
-          // checked={formValues.help_groups === id}
-          onChange={handleHelpGroups}
+          checked={formValues?.helpGroups === id}
+          onChange={handleCheckbox}
           />
           {label}
         </label> 
       ))}
       </div>
+      <h4 className='form-step_h4'>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h4>
+      <input 
+      id="localizationSpecific"
+      name="localizationSpecific"
+      type='text' 
+      value={formValues?.localizationSpecific} 
+      className='form-step_text__input'
+      onChange={handleChange("localizationSpecific")} 
+      />
     </div>
   )
 }
