@@ -9,12 +9,13 @@ export default function ContactForm({ contact, submitLabel, onSubmit, setSuccess
     function handleChange(event) {
         const { name, value } = event.target;
         setValues(values => ({ ...values, [name]: value }));
+        setSuccess(null);
     }
 
     //Only when validation is ok u can sent contact message
     function handleSubmit(event) {
         event.preventDefault();
-        setSuccess(null);
+        
         const errorMessages = validate(values);
         setErrorMessages(errorMessages);
         if (errorMessages) return;
