@@ -1,9 +1,7 @@
-import { useState } from "react";
 import FormStep4Input from "../utils/FormStep4Input";
 
 //styles for this are in form-steps.scss
-export default function FormStep4({ formValues, handleChange }) {
-   const [errorMessages, setErrorMessages] = useState(null);
+export default function FormStep4({ formValues, handleChange, errorMessages }) {
   const pickupAdres = [
     {
       label: 'Ulica',
@@ -32,20 +30,52 @@ export default function FormStep4({ formValues, handleChange }) {
     {
       label: 'Numer telefonu',
       name: 'phone',
-      type: 'number',
+      type: 'tel',
       value: formValues?.phone,
       errorMessage: errorMessages?.phone,
       onChange: handleChange("phone")
-    },
+    }
   ]
- 
+
+  const pickupTime = [
+    {
+      label: 'Data',
+      name: 'date',
+      type: 'date',
+      value: formValues?.date,
+      errorMessage: errorMessages?.date,
+      onChange: handleChange("date")
+    },
+    {
+      label: 'Godzina',
+      name: 'time',
+      type: 'time',
+      value: formValues?.time,
+      errorMessage: errorMessages?.time,
+      onChange: handleChange("time")
+    }
+  ]
 
   return (
-    <form className="form-step_pickup">
+    <section className="form-step_pickup">
       <div className="form-step_pickup_column">
         <h4 className='form-step_h4'>Adres odbioru</h4>
         {pickupAdres.map(({ label, name, type, value, errorMessage, onChange}) => (
-          <FormStep4Input 
+            <FormStep4Input 
+            key={name}
+            label={label}
+            name={name}
+            type={type}
+            value={value}
+            errorMessage={errorMessage}
+            onChange={onChange}
+          />
+        ))}
+      </div>
+      <div className="form-step_pickup_column">
+        <h4 className='form-step_h4'>Termin odbioru</h4>
+        {pickupTime.map(({ label, name, type, value, errorMessage, onChange}) => (
+        <FormStep4Input 
           key={name}
           label={label}
           name={name}
@@ -53,28 +83,9 @@ export default function FormStep4({ formValues, handleChange }) {
           value={value}
           errorMessage={errorMessage}
           onChange={onChange}
-          />
+        />
         ))}
-      </div>
-      <div className="form-step_pickup_column">
-        <h4 className='form-step_h4'>Termin odbioru</h4>
-        <FormStep4Input 
-          label="Data"
-          name='date'
-          type="date"
-          value={formValues?.date}
-          errorMessage={errorMessages?.date}
-          onChange={handleChange("date")}
-        />
-         <FormStep4Input 
-          label="Godzina"
-          name='time'
-          type="time"
-          value={formValues?.time}
-          errorMessage={errorMessages?.time}
-          onChange={handleChange("time")}
-        />
-        <label className='contact-form_field large'>
+        <label className=''>
           Uwagi dla kuriera
           <textarea
             id="note"
@@ -86,6 +97,6 @@ export default function FormStep4({ formValues, handleChange }) {
           {errorMessages?.note && <span className="error-message">{' '}{errorMessages?.note}</span>}
         </label>
       </div>
-    </form>
+    </section>
   )
 }

@@ -10,6 +10,7 @@ import FormStep3 from "./FormStep3";
 import FormStep4 from "./FormStep4";
 import FormSummary from "./FormSummary";
 import { progressBar, formVariables } from '../data/formTexts';
+import validate from '../utils/step4FormValidation.js';
 
 //some of style for this are in home-header.scss
 export default function Form() {
@@ -29,6 +30,7 @@ export default function Form() {
     note:''
   });
   const [miniError, setMiniError] = useState(false);
+  const [errorMessages, setErrorMessages] = useState(null);
 
   console.log("form:",formValues)
 
@@ -45,7 +47,11 @@ export default function Form() {
       miniError={miniError}
       />;
     } else if (page === 3) {
-      return <FormStep4 formValues={formValues} handleChange={handleChange} />;
+      return <FormStep4 
+      formValues={formValues} 
+      errorMessages={errorMessages} 
+      handleChange={handleChange} 
+      />;
     } else if (page === 4){
       return <FormSummary formValues={formValues} />
     }
@@ -76,14 +82,20 @@ export default function Form() {
   }
 
   const handleNextPage = () => {
-    if (page !== 2) {
-      setPage((currPage) => currPage + 1)
-    } else {
+    if (page === 2) {
       if (formValues.helpGroups.length > 0) {
         setPage((currPage) => currPage + 1);
       } else {
         setMiniError(true);
       }
+      
+    } else if (page === 4) {
+      const errorMessages = validate(formValues);
+      setErrorMessages(errorMessages);
+      if (errorMessages) { return; }
+
+    } else {
+      setPage((currPage) => currPage + 1)
     }
   }
 

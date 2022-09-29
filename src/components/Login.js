@@ -6,7 +6,7 @@ import SignBar from '../utils/SignBar';
 import NavigationBar from '../utils/NavigationBar';
 import DecorationLine from '../utils/DecorationLine';
 import SignInput from '../utils/SignInput';
-import validate from './signFormValidation';
+import validate from '../utils/signFormValidation.js';
 
 //SCSS file for this is sign_form.scss
 export default function Login() {

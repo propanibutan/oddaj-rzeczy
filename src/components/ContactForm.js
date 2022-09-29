@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import validate from './contactFormValidation';
+import validate from '../utils/contactFormValidation';
 
 
 export default function ContactForm({ contact, submitLabel, onSubmit, setSuccess }) {
