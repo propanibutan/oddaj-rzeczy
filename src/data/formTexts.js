@@ -39,3 +39,49 @@ export const formVariables = [
       form_steps_title: 'Podsumowanie Twojej darowizny'
     }
   ]
+
+  export const choosenThings = [
+    {
+        id: 'reuse-clothes',
+        label: 'ubrania w dobrym stanie'
+    },
+    {
+        id: 'trash-clothes',
+        label: 'ubrania do wyrzucenia'
+    },
+    {
+        id: 'toys',
+        label: 'zabawki'
+    },
+    {
+        id: 'books',
+        label: 'książki'
+    },
+    {
+        id: 'others',
+        label: 'inne'
+    }
+]
+
+export const helpGroups = [
+  {
+    id: 'children',
+    label: 'dzieciom'
+  }, 
+  {
+    id: 'single-mothers',
+    label:'samotnym matkom'
+  }, 
+  {
+    id:'homeless',
+    label:'bezdomnym'
+  }, 
+  {
+    id: 'disabled-people',
+    label:'niepełnosprawnym'
+  }, 
+  {
+    id:'elder-people', 
+    label:'osobom starszym'
+  }
+]

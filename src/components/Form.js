@@ -33,13 +33,18 @@ export default function Form() {
   const [errorMessages, setErrorMessages] = useState(null);
 
   console.log("form:",formValues)
-  console.log("page", page)
 
   const stepDisplay = () => {
     if (page === 0) {
-      return <FormStep1 formValues={formValues} handleChange={handleChange} />;
+      return <FormStep1 
+      formValues={formValues} 
+      handleChange={handleChange} 
+      />;
     } else if (page === 1) {
-      return <FormStep2 formValues={formValues} handleChange={handleChange} />;
+      return <FormStep2 
+      formValues={formValues} 
+      handleChange={handleChange} 
+      />;
     } else if (page === 2) {
       return <FormStep3 
       formValues={formValues} 
@@ -152,7 +157,9 @@ export default function Form() {
           className="form-step_button"
           onClick={handleNextPage}
           >
-            Dalej
+            {page !== 4 
+            ? "Dalej"
+            : "Potwierdzam"}
           </button>
         </div>
       </form>

@@ -1,5 +1,5 @@
 //styles for this are in form-steps.scss
-export default function FormStep1({formValues, handleChange}) {
+export default function FormStep1({formValues, handleChange }) {
     const thingsToGive = [
         {
             id: 'reuse-clothes',

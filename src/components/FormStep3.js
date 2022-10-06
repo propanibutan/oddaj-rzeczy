@@ -1,27 +1,7 @@
+import { helpGroups } from '../data/formTexts';
 export default function FormStep3({formValues, handleChange, handleCheckbox, miniError}) {
   const city = ['Poznań', 'Warszawa', 'Kraków', 'Wrocław', 'Katowice']
-  const helpGroups = [
-    {
-      id: 'children',
-      label: 'dzieciom'
-    }, 
-    {
-      id: 'single-mothers',
-      label:'samotnym matkom'
-    }, 
-    {
-      id:'homeless',
-      label:'bezdomnym'
-    }, 
-    {
-      id: 'disabled-people',
-      label:'niepełnosprawnym'
-    }, 
-    {
-      id:'elder-people', 
-      label:'osobom starszym'
-    }
-  ]
+  
 
   return (
     <div className="form-step_3_container">
