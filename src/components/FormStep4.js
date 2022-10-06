@@ -89,12 +89,11 @@ export default function FormStep4({ formValues, handleChange, errorMessages }) {
           Uwagi <br/>dla kuriera
           <textarea
             id="note"
-            className={`form-step4_texarea ${errorMessages?.note ? "error-border" : ""}`}
+            className='form-step4_texarea'
             name="note" 
             value={formValues?.note}
             onChange={handleChange("note")}
           />
-          {errorMessages?.note && <span className="error-message">{' '}{errorMessages?.note}</span>}
         </label>
       </div>
     </section>

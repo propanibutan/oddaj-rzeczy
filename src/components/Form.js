@@ -33,6 +33,7 @@ export default function Form() {
   const [errorMessages, setErrorMessages] = useState(null);
 
   console.log("form:",formValues)
+  console.log("page", page)
 
   const stepDisplay = () => {
     if (page === 0) {
@@ -89,10 +90,15 @@ export default function Form() {
         setMiniError(true);
       }
       
-    } else if (page === 4) {
+    } else if (page === 3) {
       const errorMessages = validate(formValues);
       setErrorMessages(errorMessages);
-      if (errorMessages) { return; }
+
+      if (errorMessages) { 
+        return; 
+      } else {
+        setPage((currPage) => currPage + 1)
+      }
 
     } else {
       setPage((currPage) => currPage + 1)
@@ -119,15 +125,18 @@ export default function Form() {
           </div>
         </div>
       </div>
-      <div className="row form-info-bar">
+     {page !== 4
+      ? <div className="row form-info-bar">
         <span className="form-info-bar_warning">Ważne!</span>
-        <p className="form-info-bar_description">{formVariables[page].info_bar}</p>
+        <p className="form-info-bar_description">{formVariables[page]?.info_bar}</p>
       </div>
-
+      : ""}
       <form className="row form-steps-view">
         <div className='form-step'>
-          <span className='form-step_progress'>Krok {progressBar[page].number}/4</span>
-          <h2 className='form-step_title'>{formVariables[page].form_steps_title}</h2>
+          {page !== 4 
+          ? <span className='form-step_progress'>Krok {progressBar[page]?.number}/4</span> 
+          : ""}
+          <h2 className='form-step_title'>{formVariables[page]?.form_steps_title}</h2>
           {stepDisplay()}
         </div>
         <div className="form-steps_buttons">

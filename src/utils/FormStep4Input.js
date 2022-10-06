@@ -14,7 +14,8 @@ export default function FormStep4Input( {
   }
 
   return (
-    <label className='form-step4_input_container'>
+    <div>
+      <label className='form-step4_input_container'>
         {label}
         <input 
             id={name}
@@ -24,7 +25,9 @@ export default function FormStep4Input( {
             value={value}
             onChange={handleChange}
         />
-        {errorMessage && <span className="error-message">{' '}{errorMessage}</span>}
     </label>
+     {errorMessage && <span className="error-message">{' '}{errorMessage}</span>}
+    </div>
+  
   )
 }

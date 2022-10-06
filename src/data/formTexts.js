@@ -33,5 +33,9 @@ export const formVariables = [
     {
       info_bar:'Podaj adres oraz termin odbioru rzeczy.',
       form_steps_title: 'Podaj adres oraz termin odbioru rzecz przez kuriera',
+    },
+    {
+      info_bar: " ",
+      form_steps_title: 'Podsumowanie Twojej darowizny'
     }
   ]
